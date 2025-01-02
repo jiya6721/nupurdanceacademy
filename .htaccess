@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /codeigniter/
+
+# Don't rewrite for existing files, directories, or resources like images, robots.txt, etc.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|robots\.txt|public/)
+
+# Rewrite everything else to index.php
+RewriteRule ^(.*)$ /codeigniter/index.php/$1 [L]
