@@ -15,16 +15,16 @@ class admin_login extends CI_Controller
 	
         public function index()
 	{
-		if($this->input->post('login'))
+		if($this->input->post('admin_panel/admin_login_view'))
 		{
 		$name=$this->input->post('name');
 		$email=$this->input->post('email');
 		$password=$this->input->post('password');
 
-		$this->Register_model->insert_data($name,$email,$password);
+		// $this->Register_model->insert_data($name,$email,$password);
 
 	}else{
-        $this->load->view('admin_login_view.php');
+        $this->load->view('admin_panel/admin_login_view');
 	}
     }
 }
