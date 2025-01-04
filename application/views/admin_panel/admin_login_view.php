@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Login &mdash; Stisla</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="public/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/modules/fontawesome/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="public/modules/bootstrap-social/bootstrap-social.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/components.css">
+</head>
+
+
 <body>
   <div id="app">
     <section class="section">
@@ -89,7 +107,7 @@
   <script src="public/modules/nicescroll/jquery.nicescroll.min.js"></script>
   <script src="public/modules/moment.min.js"></script>
   <script src="public/js/stisla.js"></script>
-  
+  <!-- <script src="view/layouts/include_js.php"></script> -->
   <!-- JS Libraies -->
 
   <!-- Page Specific JS File -->

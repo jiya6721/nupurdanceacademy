@@ -6,7 +6,6 @@ class admin_login extends CI_Controller
 	public function __construct()
 	{
 	parent::__construct();
-	$this->load->database('nda');
 	$this->load->helper('url');
     $this->load->helper('form');
  ///load model
@@ -21,7 +20,7 @@ class admin_login extends CI_Controller
 		$email=$this->input->post('email');
 		$password=$this->input->post('password');
 
-		// $this->Register_model->insert_data($name,$email,$password);
+		 $this->login_model->insert_data($name,$email,$password);
 
 	}else{
         $this->load->view('admin_panel/admin_login_view');

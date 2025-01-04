@@ -59,3 +59,5 @@ $route['Home'] = 'Home';
 $route['admin_login'] = 'admin_panel/admin_login';
 
 $route['admin_register'] = 'admin_panel/admin_register';
+
+$route['admin_register_add'] = 'admin_panel/admin_register/register';

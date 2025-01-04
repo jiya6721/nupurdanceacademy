@@ -1,4 +1,51 @@
+
+<!DOCTYPE html>
 <html>
+<head>
+
+  <!-- Use base_url() for static assets -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="<?= base_url('public/css/bootstrap.min.css'); ?>"> 
+
+  <!-- Correct script tags for JS files -->
+  <script src="<?= base_url('public/js/jquery.min.js'); ?>"></script>
+  <script src="<?= base_url('public/js/bootstrap.min.js'); ?>"></script>
+
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Register &mdash; Stisla</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="public/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/modules/fontawesome/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="public/modules/jquery-selectric/selectric.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="public/css/components.css">
+  <script src="public/modules/jquery.min.js"></script>
+  <script src="public/modules/popper.js"></script>
+  <script src="public/modules/tooltip.js"></script>
+  <script src="public/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="public/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="public/modules/moment.min.js"></script>
+  <script src="public/js/stisla.js"></script>
+  
+  <!-- JS Libraies -->
+  <script src="public/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+  <script src="public/modules/jquery-selectric/jquery.selectric.min.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="public/js/page/auth-register.js"></script>
+  
+  <!-- Template JS File -->
+  <script src="public/js/scripts.js"></script>
+  <script src="public/js/custom.js"></script>
+</head>
 <body>
   <div id="app">
     <section class="section">
@@ -13,7 +60,7 @@
               <div class="card-header"><h4>Register</h4></div>
 
               <div class="card-body">
-                <form method="POST">
+                <form method="POST" action="<?=base_url('admin_register_add')?>">
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="frist_name">First Name</label>

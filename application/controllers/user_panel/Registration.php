@@ -23,7 +23,7 @@ class Registration extends CI_Controller
 		$phone=$this->input->post('phone');
 		$password=$this->input->post('password');
 
-		$this->Register_model->insert_data($name,$email,$phone,$password);
+		$this->register_model->insert_data($name,$email,$phone,$password);
 
 	}else{
 	$this->load->view('registration_view.php');
