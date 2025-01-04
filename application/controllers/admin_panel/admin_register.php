@@ -31,10 +31,10 @@ $this->load->model('User');
 
             if ($result) {
                 $this->session->set_flashdata('register_success', 'You have registered successfully!');
-                redirect(base_url('admin_register'));
+                redirect(base_url('admin_dashboard'));
             } else {
                 $this->session->set_flashdata('register_fail', 'Registration failed. Please try again.');
-                redirect(base_url('admin_register'));
+                redirect(base_url('admin_dashboard'));
             }
 
     }
