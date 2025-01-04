@@ -76,6 +76,24 @@ button {
     <div class="login">
         
         <h1>Enter your login credentials</h1>
+        <?php if($this->session->flashdata('register_success')): ?>
+<script>
+  Swal.fire({
+    title: 'Success!',
+    text: '<?= $this->session->flashdata('register_success'); ?>',
+    icon: 'success'
+  });
+</script>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('register_fail')): ?>
+<script>
+  Swal.fire({
+    title: 'Error!',
+    text: '<?= $this->session->flashdata('register_fail'); ?>',
+    icon: 'error'
+  });
+</script>
 
         <form action="">
             <label for="first">

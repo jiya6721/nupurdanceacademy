@@ -18,40 +18,24 @@ $this->load->model('User');
 
     public function index()
     {
+        $this->load->library('session'); // Make sure session is loaded
+     
         $this->load->view('admin_panel/admin_register_view');
 	}
 
     public function register(){
 
+        $this->load->library('session'); // Make sure session is loaded
         $this->user = new User;
+            $result = $this->User->insert_entry($data);
 
-        // $this->load->model('User');
-        
-        $data = $this->User->insert_entry($_POST);
-
-        print_R($data);
-        die;
-        // $this->load->view('blog', $data);
-
-        // $this->form_validation->set_rules('title', 'Title', 'required');
-
-        // $this->form_validation->set_rules('description', 'Description', 'required');
-
-
-
-        // if ($this->form_validation->run() == FALSE){
-
-        //     $this->session->set_flashdata('errors', validation_errors());
-
-        //     redirect(base_url('itemCRUD/create'));
-
-        // }else{
-
-        //    $this->itemCRUD->insert_item();
-
-        //    redirect(base_url('itemCRUD'));
-
-        // }
+            if ($result) {
+                $this->session->set_flashdata('register_success', 'You have registered successfully!');
+                redirect(base_url('admin_register'));
+            } else {
+                $this->session->set_flashdata('register_fail', 'Registration failed. Please try again.');
+                redirect(base_url('admin_register'));
+            }
 
     }
 }

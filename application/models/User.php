@@ -30,19 +30,19 @@ class User extends CI_Model{
     {    
         $this->name    = $_POST['frist_name']; // please read the below note
         $this->email  = $_POST['email'];
-        $this->password     = $_POST['password'];
 
         $this->db->insert('users', $this);
-        // $data = array(
 
-        //     'title' => $this->input->post('title'),
+    $this->password = password_hash($data['password'], PASSWORD_BCRYPT); // bcrypt is a secure hashing algorithm
 
-        //     'description' => $this->input->post('description')
+    $insert_status = $this->db->insert('users', $this);
 
-        // );
-
-        // return $this->db->insert('items', $data);
-
+    if ($insert_status) {
+        return $this->db->insert_id(); // Returns the inserted record ID
+    } else {
+        return false; // Return false if the insertion failed
+    }
+     
     }
 
 }

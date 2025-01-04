@@ -26,6 +26,21 @@ class admin_login extends CI_Controller
         $this->load->view('admin_panel/admin_login_view');
 	}
     }
+    public function register(){
+
+      $this->load->library('session'); // Make sure session is loaded
+      $this->user = new User;
+          $result = $this->User->insert_entry($data);
+
+          if ($result) {
+              $this->session->set_flashdata('register_success', 'You have Loged-in successfully!');
+              redirect(base_url('admin_register'));
+          } else {
+              $this->session->set_flashdata('register_fail', 'Login failed. Please try again.');
+              redirect(base_url('admin_register'));
+          }
+
+  }
 }
 ?>
 

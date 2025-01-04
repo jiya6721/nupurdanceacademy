@@ -30,6 +30,24 @@
 
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
+              <?php if($this->session->flashdata('register_success')): ?>
+<script>
+  Swal.fire({
+    title: 'Success!',
+    text: '<?= $this->session->flashdata('register_success'); ?>',
+    icon: 'success'
+  });
+</script>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('register_fail')): ?>
+<script>
+  Swal.fire({
+    title: 'Error!',
+    text: '<?= $this->session->flashdata('register_fail'); ?>',
+    icon: 'error'
+  });
+</script>
 
               <div class="card-body">
                 <form method="POST" action="#" class="needs-validation" novalidate="">
