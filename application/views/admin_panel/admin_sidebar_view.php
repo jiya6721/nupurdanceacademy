@@ -19,16 +19,17 @@
         
         <ul class="navbar-nav navbar-right">
           <li class="dropdown dropdown-list-toggle">
-            <a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle ">Login</a>
+            <a href="admin_panel/admin_login" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle ">Login</a>
             
           </li>
           <li class="dropdown dropdown-list-toggle">
-            <a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Register</a>
+            <a href="admin_panel/admin_register" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Register</a>
             
           </li>
 
 
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="public/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
             <div class="dropdown-menu dropdown-menu-right">

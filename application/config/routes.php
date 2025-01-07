@@ -62,3 +62,4 @@ $route['admin_register'] = 'admin_panel/admin_register';
 
 $route['admin_register_add'] = 'admin_panel/admin_register/register';
 $route['admin_dashboard'] = 'admin_panel/admin_dashboard';
+$route['admin_gallary'] = 'admin_panel/admin_gallary';
