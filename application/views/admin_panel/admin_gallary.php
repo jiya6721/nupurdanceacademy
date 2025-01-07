@@ -6,7 +6,7 @@
             <h1>Gallery</h1>
             <div class="section-header-breadcrumb">
               <div class="breadcrumb-item active"><a href="admin_panel/admin_dashboard">Dashboard</a></div>
-              <div class="breadcrumb-item"><a href="#">Components</a></div>
+              <!-- <div class="breadcrumb-item"><a href="#">Components</a></div> -->
               <div class="breadcrumb-item">Gallery</div>
             </div>
           </div>
@@ -26,11 +26,11 @@
                       <div class="card-body">
                         <div class="gallery">
                           <div class="gallery-item" data-image="public/assets/img/flashmob.jpg" data-title="Image 1"></div>
-                          <div class="gallery-item" data-image="assets/img/news/img02.jpg" data-title="Image 2"></div>
-                          <div class="gallery-item" data-image="assets/img/news/img03.jpg" data-title="Image 3"></div>
-                          <div class="gallery-item" data-image="assets/img/news/img04.jpg" data-title="Image 4"></div>
-                          <div class="gallery-item" data-image="assets/img/news/img05.jpg" data-title="Image 5"></div>
-                          <div class="gallery-item" data-image="assets/img/news/img06.jpg" data-title="Image 6"></div>
+                          <div class="gallery-item" data-image="public/assets/img/khel_mahakumbh.jpg" data-title="Image 2"></div>
+                          <div class="gallery-item" data-image="public/assets/img/lldc1.jpg" data-title="Image 3"></div>
+                          <div class="gallery-item" data-image="public/assets/img/lldc2.jpg" data-title="Image 4"></div>
+                          <div class="gallery-item" data-image="public/assets/img/milind_soman.jpg" data-title="Image 5"></div>
+                          <div class="gallery-item" data-image="public/assets/img/modhera.jpg" data-title="Image 6"></div>
                           <div class="gallery-item" data-image="assets/img/news/img07.jpg" data-title="Image 7"></div>
                           <div class="gallery-item" data-image="assets/img/news/img08.jpg" data-title="Image 8"></div>
                         </div>
@@ -86,5 +86,7 @@
                   </div>
                 </div>
               </div>
+
+              <script src="public/assets/js/modules-slider.js"></script>
 </body>
 </html>

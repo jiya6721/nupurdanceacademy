@@ -88,7 +88,7 @@
                 <!-- <li><a class="nav-link" href="bootstrap-card.html">Card</a></li> -->
                 <!-- <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li> -->
                 <!-- <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li> -->
-                <!-- <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li> -->
+                <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
                 <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
                 <!-- <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li> -->
                 <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
