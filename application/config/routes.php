@@ -54,12 +54,14 @@ $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'login';
-$route['Registration'] = 'Registration';
-$route['Home'] = 'Home';
+$route['Registration'] = 'user_panel/Registration';
+$route['Home'] = 'user_panel/Home';
+$route['sliders'] = 'user_panel/sliders';
+
+
 $route['admin_login'] = 'admin_panel/admin_login';
-
 $route['admin_register'] = 'admin_panel/admin_register';
-
 $route['admin_register_add'] = 'admin_panel/admin_register/register';
 $route['admin_dashboard'] = 'admin_panel/admin_dashboard';
 $route['admin_gallary'] = 'admin_panel/admin_gallary';
+

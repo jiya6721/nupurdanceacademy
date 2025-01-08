@@ -52,12 +52,13 @@
 
   <?php echo @$message; ?>
 
+  
 
 
   <form method="post"  enctype="multipart/formdata">
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" name="name" placeholder="Enter Name">
+      <input type="text" class="form-control" name="name" placeholder="Enter Name" require>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -71,8 +72,19 @@
 
 	<div class="form-group">
       <label for="passsword">Password:</label>
-      <input type="text" class="form-control" name="password" placeholder="Enter Password">
+      <input type="text" class="form-control" name="password" placeholder="Enter Password" require>
     </div>
+
+  <div class="form-group">
+    <label for="dob">Enter your Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required />
+  </div>
+
+  <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" class="form-control" name="address" placeholder="Enter address" require>
+    </div>
+
     <input type="submit" name="register" class="btn btn-success" value="Register" />
   </form>
 </div>

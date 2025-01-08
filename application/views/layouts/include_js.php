@@ -36,3 +36,12 @@
   <script src="<?= base_url('public/assets/js/stisla.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/utilities-contact.js'); ?>"></script>
   
+
+
+
+  <script src="<?= base_url('public/assets/js/jquery.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/jquery.min.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/jquery.min.map'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/jquery.slim.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/jquery.slim.min.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/jquery.slim.min.map'); ?>"></script>

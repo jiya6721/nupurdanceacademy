@@ -6,8 +6,8 @@
 
 
 
-include_once "include_css.php";
-include_once "include_js.php";
+include_once APPPATH . "views/layouts/include_css.php";
+include_once APPPATH . "views/layouts/include_js.php";
 
 ?>
   </head>
@@ -74,7 +74,28 @@ include_once "include_js.php";
       </div>
   </section>
     
-</body>
+  <section class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-service-item owl-carousel">
+          
+            <div class="item">
+              <div class="icon">
+              <img src="public/assets/img/NDALOGO.png">
+              </div>
+              <div class="down-content">
+                <h4>Best Education</h4>
+                <p>........</p>
+              </div>
+            </div>
+
+            </div>
+         </div>
+        </div>
+    </div>
+    </section>
+
 
 </body>
 </html>
