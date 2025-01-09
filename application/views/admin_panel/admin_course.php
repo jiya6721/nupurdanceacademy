@@ -6,22 +6,22 @@
       <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>Gallary</h1>
+            <h1>Course</h1>
           </div>
             
             <div class="row">
               <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Add Image/Video</h4>
+                    <h4>Add Courses</h4>
                   </div>
                   <div class="card-body">
 
-                    <form action="<?=base_url('admin_add_gallary')?>" method="post">
+                    <form action="<?=base_url('admin_add_course')?>" method="post">
 
 
                       <div class="form-group">
-                        <label>Image name</label>
+                        <label>Course year</label>
                         <input type="text" name="name"class="form-control">
                       </div>
                       <div class="form-group">

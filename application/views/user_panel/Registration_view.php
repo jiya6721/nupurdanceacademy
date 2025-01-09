@@ -35,11 +35,11 @@
   <script src="public/js/stisla.js"></script>
   
   <!-- JS Libraies -->
-  <script src="public/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
-  <script src="public/modules/jquery-selectric/jquery.selectric.min.js"></script>
+  <!-- <script src="public/modules/jquery.pwstrength.min.js"></script> -->
+  <!-- <script src="public/modules/jquery.selectric.min.js"></script> -->
 
   <!-- Page Specific JS File -->
-  <script src="public/js/page/auth-register.js"></script>
+  <script src="public/js/auth-register.js"></script>
   
   <!-- Template JS File -->
   <script src="public/js/scripts.js"></script>

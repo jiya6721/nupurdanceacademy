@@ -2,14 +2,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');  
 
-class admin_sliders extends CI_Controller
+class admin_course extends CI_Controller
 {
     public function __construct()
 	{
 	parent::__construct();
 	$this->load->helper('url');
     $this->load->helper('form');
-    $this->load->model('Slider');
+    $this->load->model('Course');
 
     
 
@@ -26,14 +26,14 @@ class admin_sliders extends CI_Controller
         // die;
         $this->load->library('session'); // Make sure session is loaded
      
-        $this->load->view('admin_panel/admin_sliders');
+        $this->load->view('admin_panel/admin_course');
 	}
 
 
     public function add(){
         $this->load->library('session'); // Make sure session is loaded
-        $this->slider = new Slider;
-            $result = $this->slider->insert_entry($data);
+        $this->course = new Course;
+            $result = $this->course->insert_entry($data);
 
             if ($result) {
                 $this->session->set_flashdata('register_success', 'You have registered successfully!');
