@@ -35,13 +35,19 @@
   <script src="<?= base_url('public/assets/js/scripts.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/stisla.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/utilities-contact.js'); ?>"></script>
-  
-
-
-
   <script src="<?= base_url('public/assets/js/jquery.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/jquery.min.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/jquery.min.map'); ?>"></script>
   <script src="<?= base_url('public/assets/js/jquery.slim.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/jquery.slim.min.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/jquery.slim.min.map'); ?>"></script>
+
+  <script src="<?= base_url('public/assets/js/custom.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/isotope.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/isotope.min.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/lightbox.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/owl-carousel.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/slick-slider.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/tabs.js'); ?>"></script>
+  <script src="<?= base_url('public/assets/js/video.js'); ?>"></script>
+  

@@ -30,6 +30,7 @@ include_once APPPATH . "views/layouts/include_js.php";
                       <ul class="nav">
                           <li class="scroll-to-section active"><a href="#" class="active">Home</a></li>
                           <li class="scroll-to-section active"><a href="<?=base_url('Registration');?>" class="active">Registration</a></li>
+                          <li class="scroll-to-section active"><a href="<?=base_url('sliders');?>" class="active"></a></li>
 
                           <li><a href="meetings.html">Events</a></li>
                           <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
@@ -74,7 +75,7 @@ include_once APPPATH . "views/layouts/include_js.php";
       </div>
   </section>
     
-  <section class="services">
+  <!-- <section class="services">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -94,7 +95,7 @@ include_once APPPATH . "views/layouts/include_js.php";
          </div>
         </div>
     </div>
-    </section>
+    </section> -->
 
 
 </body>

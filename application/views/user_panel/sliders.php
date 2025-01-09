@@ -1,47 +1,79 @@
 <html>
-<body>
+<ol class="carousel-indicators">
 
+  <?php $temp = 0;
 
-<section class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-service-item owl-carousel">
-          
-            <div class="item">
-              <div class="icon">
-                <img src="public/assets/img/NDALOGO.png">
-              </div>
-              <div class="down-content">
-                <h4>Best Education</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-            
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-02.png">
-              </div>
-              <div class="down-content">
-                <h4>Best Teachers</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
+   if(count($img)){
+    foreach ($img as $value) {
 
-            <div class="item">
-              <div class="icon">
-                <img src="assets/images/service-icon-03.png">
-              </div>
-              <div class="down-content">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
-              </div>
-            </div>
-            
-          </div>
-        </div>
+      if ($temp == 0) {
+
+        echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
+        $temp++;
+        }
+        else{
+
+              echo '<li data-target="#myCarousel" data-slide-to="'.$temp.'"></li>';
+
+              $temp++;
+            }
+
+    }
+
+  } ?>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+
+        <?php $temp = 0;
+
+   if(count($img)){ 
+    foreach ($img as $value) {
+
+      if ($temp == 0) {  ?>
+
+      <div class = "item active">
+      <img src="<?php echo base_url('uploads/slider/')?><?php echo $value["IMAGE"] ?>" alt= "Image of every carousel" style="width:100%;height: 100%;>
+
+        <div class ="carousel-caption">
+        <div class ="carousel-caption">
+      <h3><?php echo $value["TITLE"] ?></h3> 
+      <p><?php echo $value["DESCRIPTION"] ?></p>
       </div>
-    </div>
-  </section>
- </body>
+  </div>
+
+        <?php $temp++;
+        }
+        else{
+         ?>
+
+
+      <div class = "item">
+      <img src="<?php echo base_url('uploads/slider/')?><?php echo $value["IMAGE"] ?>" alt="Image of every carousel" style="width:100%;height: 100%;>
+      <div class="carousel-caption">
+        <div class ="carousel-caption">
+      <h3><?php echo $value["TITLE"] ?></h3> 
+      <p><?php echo $value["DESCRIPTION"] ?></p></div> </div>
+
+    <?php
+        $temp++;
+            }
+
+    }
+
+  } ?>
+
+</div>
+
+
+<!-- Left and right controls -->
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right"></span>
+  <span class="sr-only">Next</span>
+</a>
 </html>
