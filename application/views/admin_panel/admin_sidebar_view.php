@@ -54,7 +54,7 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Nupur Academy</a>
+            <a href="index.html">Nupur Nritya</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
@@ -68,7 +68,9 @@
             <li><a class="nav-link" href="<?=base_url('admin_sliders');?>"><i class="fas fa-grip-horizontal"></i> <span>Sliders</span></a></li>
             <li><a class="nav-link" href="<?=base_url('admin_gallary');?>"><i class="far fa-file-image"></i> <span>Gallary</span></a></li>
             <li><a class="nav-link" href="<?=base_url('admin_course');?>"><i class="fas fa-book"></i> <span>Course</span></a></li>
-          </div>        </aside>
+            <li><a class="nav-link" href="<?=base_url('admin_alumni');?>"><i class="fas fa-address-card"></i> <span>Alumni</span></a></li>
+          </div>       
+         </aside>
       </div>
     </div>
   </div>
