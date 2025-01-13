@@ -7,44 +7,44 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="<?= base_url('public/css/bootstrap.min.css'); ?>"> 
+  <link rel="stylesheet" href="<?= base_url('../public/css/bootstrap.min.css'); ?>"> 
 
   <!-- Correct script tags for JS files -->
-  <script src="<?= base_url('public/js/jquery.min.js'); ?>"></script>
-  <script src="<?= base_url('public/js/bootstrap.min.js'); ?>"></script>
+  <script src="<?= base_url('../public/js/jquery.min.js'); ?>"></script>
+  <script src="<?= base_url('../public/js/bootstrap.min.js'); ?>"></script>
 
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Register &mdash; Stisla</title>
 
   <!-- General CSS Files -->
-  <link rel="stylesheet" href="public/modules/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="public/modules/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../public/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/modules/fontawesome/css/all.min.css">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="public/modules/jquery-selectric/selectric.css">
+  <link rel="stylesheet" href="../public/modules/jquery-selectric/selectric.css">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="public/css/style.css">
-  <link rel="stylesheet" href="public/css/components.css">
-  <script src="public/modules/jquery.min.js"></script>
-  <script src="public/modules/popper.js"></script>
-  <script src="public/modules/tooltip.js"></script>
-  <script src="public/modules/bootstrap/js/bootstrap.min.js"></script>
-  <script src="public/modules/nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="public/modules/moment.min.js"></script>
-  <script src="public/js/stisla.js"></script>
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="../public/css/components.css">
+  <script src="../public/modules/jquery.min.js"></script>
+  <script src="../public/modules/popper.js"></script>
+  <script src="../public/modules/tooltip.js"></script>
+  <script src="../public/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../public/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="../public/modules/moment.min.js"></script>
+  <script src="../public/js/stisla.js"></script>
   
   <!-- JS Libraies -->
-  <script src="public/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
-  <script src="public/modules/jquery-selectric/jquery.selectric.min.js"></script>
+  <script src="../public/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+  <script src="../public/modules/jquery-selectric/jquery.selectric.min.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="public/js/page/auth-register.js"></script>
+  <script src="../public/js/page/auth-register.js"></script>
   
   <!-- Template JS File -->
-  <script src="public/js/scripts.js"></script>
-  <script src="public/js/custom.js"></script>
+  <script src="../public/js/scripts.js"></script>
+  <script src="../public/js/custom.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -57,7 +57,7 @@
         <div class="row">
           <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
             <div class="login-brand">
-              <img src="public/assets/img/NDALOGO.jpg" alt="logo" width="100" class="shadow-light rounded-circle">
+              <img src="../public/assets/img/NDALOGO.jpg" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
 
             <div class="card card-primary">

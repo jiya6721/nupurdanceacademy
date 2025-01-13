@@ -4,7 +4,7 @@ class Course extends CI_Model{
 
 
 
-    // public function get_itemCRUD(){
+    public function get_course(){
 
     //     if(!empty($this->input->get("search"))){
 
@@ -14,17 +14,17 @@ class Course extends CI_Model{
 
     //     }
 
-    //     $query = $this->db->get("items");
+        $query = $this->db->get("course");
 
-    //     return $query->result();
+        return $query->result();
 
-    // }
+    }
 
 
     public function insert_entry()
     {
         // Load the Upload library
-        $config['upload_path']   = './uploads/'; // Path to save uploaded files
+        $config['upload_path']   = 'public/uploads/course'; // Path to save uploaded files
         $config['allowed_types'] = 'rtf|cvs|txt|pdf|doc|docx|wpd|odt'; // Allowed file types
         $config['max_size']      = 1024; // Maximum file size in KB (1 GB)
         $config['encrypt_name']  = true; // Encrypt file names to avoid conflicts
@@ -47,7 +47,7 @@ class Course extends CI_Model{
         // Gather other form input data
         $data = [
             'name' => $this->input->post('name', true),
-            'file_name'  => $file_name // Store the file name/path in the database
+            'file'  => $file_name // Store the file name/path in the database
         ];
     
         // Insert data into the database

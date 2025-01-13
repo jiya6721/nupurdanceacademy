@@ -51,3 +51,4 @@
   <script src="<?= base_url('public/assets/js/tabs.js'); ?>"></script>
   <script src="<?= base_url('public/assets/js/video.js'); ?>"></script>
   
+  

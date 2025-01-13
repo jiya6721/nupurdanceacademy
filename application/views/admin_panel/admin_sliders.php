@@ -1,8 +1,6 @@
 
 <?php $this->load->view('admin_panel/admin_sidebar_view'); ?>
 
-
-
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
@@ -18,7 +16,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form action="<?=base_url('admin_add_slider')?>" method="post">
+                    <form action="<?=base_url('admin_add_slider')?>" method="post" enctype='multipart/form-data'>
 
 
                       <div class="form-group">
@@ -35,6 +33,41 @@
                     </form>
                   </div>
                 </div>
+
+                <div class="card mt-5">
+                  <div class="card-header">
+                      List
+                  </div>
+                  <div class="card-body">
+                  <table class="table ">
+
+                  <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>File</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                    <?php
+
+                    foreach ($sliders as $key => $slider) { ?>
+                      
+
+                      <tr>
+                          <td><?=$slider->name?></td>
+                          <td><?=$slider->file?></td>
+                        </tr>
+                     <?php }
+                     
+                    ?>
+                     
+                        
+                       </tbody>
+                    </table>
+
+                  </div>
+                
+                </div>
                   
                    
                   </div>
@@ -42,7 +75,8 @@
                 
               </div>
               
-            </div>
+
+               </div>
           </div>
           
 

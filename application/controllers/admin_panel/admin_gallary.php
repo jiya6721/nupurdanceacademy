@@ -10,29 +10,33 @@ class admin_gallary extends CI_Controller
 	$this->load->helper('url');
     $this->load->helper('form');
     $this->load->model('Gallary');
-
-    
-
-
- ///load model
-
- 
-	}
+    }
 
     public function index()
     {
 
-        // echo "hello";
-        // die;
-        $this->load->library('session'); // Make sure session is loaded
-     
-        $this->load->view('admin_panel/admin_gallary');
-	}
+       $this->load->library('session'); // Make sure session is loaded
+       $this->gallary = new Gallary;
+       $data['gallary'] = $this->gallary->get_gallary();
 
+       $this->load->view('admin_panel/admin_gallary',$data);
+	}
+    public function get_gallary_list()
+    {
+        
+    
+    }
 
     public function add(){
+
+        
         $this->load->library('session'); // Make sure session is loaded
         $this->gallary = new Gallary;
+
+
+        $data['file']=$_FILES['file'];
+        $data['name']=$_POST['name'];
+
             $result = $this->gallary->insert_entry($data);
 
             if ($result) {
