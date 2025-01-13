@@ -43,7 +43,7 @@
                       </thead>
                     </body>
                   <?php
-                    foreach ($course as $key => $course) { ?>
+                    foreach ($courses as $key => $course) { ?>
                       <tr>
                           <td><?=$course->name?></td>
                           <td><?=$course->file?></td>

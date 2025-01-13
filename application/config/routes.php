@@ -67,10 +67,6 @@ $route['admin_gallary'] = 'admin_panel/admin_gallary';
 $route['admin_add_gallary'] = 'admin_panel/admin_gallary/add';
 $route['admin_sliders'] = 'admin_panel/admin_sliders';
 $route['admin_add_slider'] = 'admin_panel/admin_sliders/add';
-// $route['admin_get_slider'] = 'admin_panel/admin_sliders/get_sliders_list';
-
-
-
 $route['admin_course'] = 'admin_panel/admin_course';
 $route['admin_add_course'] = 'admin_panel/admin_course/add';
 $route['admin_alumni'] = 'admin_panel/admin_alumni';
