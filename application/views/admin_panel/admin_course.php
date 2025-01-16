@@ -41,9 +41,9 @@
                           <th>File</th>
                         </tr>
                       </thead>
-                    </body>
+                    </tbody>
                   <?php
-                    foreach ($courses as $key => $course) { ?>
+                    foreach ($course as $key => $course) { ?>
                       <tr>
                           <td><?=$course->name?></td>
                           <td><?=$course->file?></td>

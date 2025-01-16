@@ -10,31 +10,37 @@ class admin_alumni extends CI_Controller
 	$this->load->helper('url');
     $this->load->helper('form');
     $this->load->model('Alumni');
-
-    
-
-
- ///load model
-
- 
 	}
 
     public function index()
     {
 
-        // echo "hello";
-        // die;
-        $this->load->library('session'); // Make sure session is loaded
-     
-        $this->load->view('admin_panel/admin_alumni');
-	}
-
-
-    public function add(){
         $this->load->library('session'); // Make sure session is loaded
         $this->alumni = new Alumni;
-            $result = $this->alumni->insert_entry($data);
+        $data['alumni'] = $this->alumni->get_alumni();
 
+        $this->load->view('admin_panel/admin_alumni',$data);
+	}
+
+    public function get_alumni_list()
+{
+    
+
+}
+
+    public function add(){
+
+        
+        $this->load->library('session'); // Make sure session is loaded
+        $this->alumni = new Alumni;
+
+
+        $data['file']=$_FILES['file'];
+        $data['name']=$_POST['name'];
+        $data['year']=$_POST['year'];
+
+            $result = $this->alumni->insert_entry($data);
+      
             if ($result) {
                 $this->session->set_flashdata('register_success', 'You have registered successfully!');
                 redirect(base_url('admin_dashboard'));
