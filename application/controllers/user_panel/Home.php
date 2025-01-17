@@ -15,7 +15,14 @@ class Home extends CI_Controller {
     {  
 
 
-        $this->load->view('user_panel/home');  
+
+        $this->load->model('Slider');
+        $this->slider = new Slider;
+        $data['sliders'] = $this->slider->get_sliders();
+
+        // print_r($data);
+        // die;
+        $this->load->view('user_panel/home_screen',$data);  
     }  
     
 }  

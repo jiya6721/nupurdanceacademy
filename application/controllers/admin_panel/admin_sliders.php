@@ -39,13 +39,13 @@ class admin_sliders extends CI_Controller
         $data['name']=$_POST['name'];
 
             $result = $this->slider->insert_entry($data);
-      
+          
             if ($result) {
                 $this->session->set_flashdata('register_success', 'You have registered successfully!');
-                redirect(base_url('admin_dashboard'));
+                redirect(base_url('admin_sliders'));
             } else {
                 $this->session->set_flashdata('register_fail', 'Registration failed. Please try again.');
-                redirect(base_url('admin_dashboard'));
+                redirect(base_url('admin_sliders'));
             }
 
     }

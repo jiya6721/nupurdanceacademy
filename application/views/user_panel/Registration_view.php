@@ -45,7 +45,7 @@
   <script src="public/js/scripts.js"></script>
   <script src="public/js/custom.js"></script>
 </head>
-<body>
+
 
 <div class="container">
   <h2>Registartion Form</h2>
@@ -53,12 +53,14 @@
   <?php echo @$message; ?>
 
   
+  <body>
 
-
-  <form method="post"  enctype="multipart/formdata">
-    <div class="form-group">
+  <form method="post"  enctype="multipart/formdata" action="<?php echo site_url('Registration/register');?>">  
+    <fieldset>
+  <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" name="name" placeholder="Enter Name" require>
+      <input type="text" class="form-control" name="name" placeholder="Enter Name">
+      <div class="error"> <?php echo form_error('name');?></div>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -72,22 +74,22 @@
 
 	<div class="form-group">
       <label for="passsword">Password:</label>
-      <input type="text" class="form-control" name="password" placeholder="Enter Password" require>
+      <input type="text" class="form-control" name="password" placeholder="Enter Password">
     </div>
 
   <div class="form-group">
     <label for="dob">Enter your Date of Birth:</label>
-    <input type="date" id="dob" name="dob" required />
+    <input type="date" id="dob" name="dob"  />
   </div>
 
   <div class="form-group">
       <label for="address">Address:</label>
-      <input type="text" class="form-control" name="address" placeholder="Enter address" require>
+      <input type="text" class="form-control" name="address" placeholder="Enter address">
     </div>
 
-    <input type="submit" name="register" class="btn btn-success" value="Register" />
+    <input type="submit" name="register" class="btn btn-success" value="Register" src="home_screen"/>
   </form>
-</div>
-
+</div>>
+</fieldset>
 </body>
 </html>

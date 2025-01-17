@@ -32,7 +32,7 @@ class Slider extends CI_Model{
         // Load the Upload library
         $config['upload_path']   = 'public/uploads/sliders'; // Path to save uploaded files
         $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; // Allowed file types
-        $config['max_size']      = 2048; // Maximum file size in KB (2 MB)
+        // $config['max_size']      = 2048; // Maximum file size in KB (2 MB)
         $config['encrypt_name']  = true; // Encrypt file names to avoid conflicts
         // print_r($config['upload_path']);
         // die;
