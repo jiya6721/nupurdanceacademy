@@ -397,107 +397,80 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-12">
           <div class="owl-courses-item owl-carousel">
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-01.jpg')?>" alt="Course One">
+              <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Morbi tincidunt elit vitae justo rhoncus</h4>
+                <h4>............</h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
+                     
                     </div>
                     <div class="col-4">
-                       <span>$160</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-02.jpg')?>" alt="Course Two">
+              <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>">
               <div class="down-content">
-                <h4>Curabitur molestie dignissim purus vel</h4>
+                <h4>===============</h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
+                    
                     </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="<?=base_url('public/frontend/images/modhera.jpg')?>" alt="">
+              <div class="down-content">
+                <h4></h4>
+                <div class="info">
+                  <div class="row">
+                    <div class="col-8">
+                     
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="<?=base_url('public/frontend/images/udaipur.jpg')?>" alt="">
+              <div class="down-content">
+                <h4></h4>
+                <div class="info">
+                  <div class="row">
+                    
                     <div class="col-4">
-                       <span>$180</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-03.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/milindsoman.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Nulla at ipsum a mauris egestas tempor</h4>
+                <!-- <h4>Lorem ipsum dolor sit amet adipiscing elit</h4> -->
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                        <li><i class="fa fa-star"></i></li>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$140</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-04.jpg')?>" alt="">
-              <div class="down-content">
-                <h4>Aenean molestie quis libero gravida</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$120</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-01.jpg')?>" alt="">
-              <div class="down-content">
-                <h4>Lorem ipsum dolor sit amet adipiscing elit</h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                      <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                    </div>
-                    <div class="col-4">
-                       <span>$250</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
