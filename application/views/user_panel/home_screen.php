@@ -455,7 +455,7 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/milindsoman.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
               <div class="down-content">
                 <!-- <h4>Lorem ipsum dolor sit amet adipiscing elit</h4> -->
                 <div class="info">
@@ -477,154 +477,154 @@ https://templatemo.com/tm-569-edu-meeting
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-02.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>" alt="">
               <div class="down-content">
-                <h4>TemplateMo is the best website for Free CSS</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$270</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-03.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/modhera.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Web Design Templates at your finger tips</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$340</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-04.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/udaipur.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Please visit our website again</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$360</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-01.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Responsive HTML Templates for you</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$400</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-02.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Download Free CSS Layouts for your business</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$430</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-03.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/modhera.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Morbi in libero blandit lectus cursus</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$480</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="item">
-              <img src="<?=base_url('public/frontend/images/course-04.jpg')?>" alt="">
+              <img src="<?=base_url('public/frontend/images/udaipur.jpg')?>" alt="">
               <div class="down-content">
-                <h4>Curabitur molestie dignissim purus</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
-                      <ul>
+                      <!-- <ul>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="col-4">
-                       <span>$560</span>
+                       <span></span>
                     </div>
                   </div>
                 </div>
