@@ -78,9 +78,31 @@ header, nav, section, article, aside, footer, hgroup {
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'ShellyMaris';
+  src: url('../fonts/Shelly Maris SH.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+:root {
+
+  --bs-font-sans-serif:'ShellyMaris', sans-serif!important;
+}
+
+.text-custom {
+  font-family: 'ShellyMaris', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+  
 html, body {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'ShellyMaris', sans-serif; */
+  font-family: 'ShellyMaris', sans-serif;
+
+  /* font-family: 'Poppins', sans-serif; */
   font-weight: 400;
   background-color: #fff;
   font-size: 16px;

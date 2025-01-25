@@ -59,6 +59,7 @@ $route['Home'] = 'user_panel/Home';
 $route['sliders'] = 'user_panel/sliders';
 
 
+
 $route['admin_login'] = 'admin_panel/admin_login';
 $route['admin_register'] = 'admin_panel/admin_register';
 $route['admin_register_add'] = 'admin_panel/admin_register/register';
@@ -71,6 +72,7 @@ $route['admin_course'] = 'admin_panel/admin_course';
 $route['admin_add_course'] = 'admin_panel/admin_course/add';
 $route['admin_alumni'] = 'admin_panel/admin_alumni';
 $route['admin_add_alumni'] = 'admin_panel/admin_alumni/add';
-
+$route['admin_events'] = 'admin_panel/admin_events';
+$route['admin_add_events'] = 'admin_panel/admin_events/add';
 
 

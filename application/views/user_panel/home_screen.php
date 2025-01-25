@@ -37,14 +37,14 @@ https://templatemo.com/tm-569-edu-meeting
 <body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-  <!-- Sub Header -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+<!-- Sub Header -->
+<div class="sub-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-sm-8">
+        <div class="left-content">
+            <!-- <h1>Hello</h1> -->
+            <p class="text-custom">This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
@@ -68,7 +68,7 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="col-12">
                   <nav class="main-nav"> 
                       <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
+                      <a href="index.html" class="logo  text-custom text-warning">
                           Nupur Nritya
                       </a>
                       <!-- ***** Logo End ***** -->
@@ -117,7 +117,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-12">
           <div class="caption">
             <h6>Hello Students</h6>
-            <h2>Welcome to Education</h2>
+            <h2 class="text-custom text-warning">Welcome to Education</h2>
             <p>
               This is an edu meeting HTML CSS template provided by 
               <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. 
@@ -209,16 +209,21 @@ https://templatemo.com/tm-569-edu-meeting
         </div>
         <div class="col-lg-4">
           <div class="categories">
-            <h4>Meeting Catgories</h4>
+            <h4>9 Year Course</h4>
             <ul>
-              <li><a href="#">Sed tempus enim leo</a></li>
-              <li><a href="#">Aenean molestie quis</a></li>
-              <li><a href="#">Cras et metus vestibulum</a></li>
-              <li><a href="#">Nam et condimentum</a></li>
-              <li><a href="#">Phasellus nec sapien</a></li>
+              <li><a href="#">Prarambhik</a></li>
+              <li><a href="#">Praveshika Pratham</a></li>
+              <li><a href="#">Praveshika Purna</a></li>
+              <li><a href="#">Madhyama Pratham</a></li>
+              <li><a href="#">Madhyama Purna</a></li>
+              <li><a href="#">Visharad Pratham</a></li>
+              <li><a href="#">Visharad Purna</a></li>
+              <li><a href="#">Alankar Pratham</a></li>
+              <li><a href="#">Alankar Purna</a></li>
+
             </ul>
             <div class="main-button-red">
-              <a href="meetings.html">All Upcoming Meetings</a>
+              <a href="meetings.html">Details of Course</a>
             </div>
           </div>
         </div>
@@ -391,7 +396,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Our Popular Courses</h2>
+            <h2>ACHIVEMENTS</h2>
           </div>
         </div>
         <div class="col-lg-12">
@@ -399,7 +404,7 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="item">
               <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
               <div class="down-content">
-                <h4>............</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
@@ -415,7 +420,7 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="item">
               <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>">
               <div class="down-content">
-                <h4>===============</h4>
+                <h4></h4>
                 <div class="info">
                   <div class="row">
                     <div class="col-8">
