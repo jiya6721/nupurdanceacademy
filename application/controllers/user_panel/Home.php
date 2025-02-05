@@ -20,8 +20,11 @@ class Home extends CI_Controller {
         $this->slider = new Slider;
         $data['sliders'] = $this->slider->get_sliders();
 
-        // print_r($data);
-        // die;
+        
+        $this->load->model('Event');
+        $this->events = new Event;
+        $data['events'] = $this->events->getEventsWithImages();
+        
         $this->load->view('user_panel/home_screen',$data);  
     }  
     

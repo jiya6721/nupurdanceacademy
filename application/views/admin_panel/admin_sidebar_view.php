@@ -69,7 +69,7 @@
             <li><a class="nav-link" href="<?=base_url('admin_gallary');?>"><i class="far fa-file-image"></i> <span>Gallary</span></a></li>
             <li><a class="nav-link" href="<?=base_url('admin_course');?>"><i class="fas fa-book"></i> <span>Course</span></a></li>
             <li><a class="nav-link" href="<?=base_url('admin_alumni');?>"><i class="fas fa-address-card"></i> <span>Alumni</span></a></li>
-            <li><a class="nav-link" href="<?=base_url('admin_events');?>"><i class="fas fa-address-card"></i> <span>Events</span></a></li>
+            <li><a class="nav-link" href="<?=base_url('admin_events');?>"><i class="fa fa-calendar"></i> <span>Events</span></a></li>
           </div>       
          </aside>
       </div>

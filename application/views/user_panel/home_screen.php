@@ -9,7 +9,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Education Meeting HTML5 Template</title>
+    <title>Nupur Nritya</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=base_url('public/frontend/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
@@ -44,7 +44,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="col-lg-8 col-sm-8">
         <div class="left-content">
             <!-- <h1>Hello</h1> -->
-            <p class="text-custom">This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
@@ -69,7 +69,7 @@ https://templatemo.com/tm-569-edu-meeting
                   <nav class="main-nav"> 
                       <!-- ***** Logo Start ***** -->
                       <a href="index.html" class="logo  text-custom text-warning">
-                          Nupur Nritya
+                         Nupur Nritya
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
@@ -116,15 +116,10 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           <div class="caption">
-            <h6>Hello Students</h6>
-            <h2 class="text-custom text-warning">Welcome to Education</h2>
-            <p>
-              This is an edu meeting HTML CSS template provided by 
-              <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">TemplateMo website</a>. 
-              This is a Bootstrap v5.1.3 layout. The video background is taken from Pexels website, 
-              a group of young people by 
-              <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Pressmaster</a>.
-            </p>
+              <h2 class="text-custom text-warning">Nupur Nritya</h2>
+                <h4 class="text-custom text-warning"><i>
+              Arts makes man better human being
+                </i></h4>
             <div class="main-button-red">
               <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
             </div>
@@ -148,8 +143,8 @@ https://templatemo.com/tm-569-edu-meeting
                 <img src="<?=base_url('public/frontend/images/service-icon-01.png')?>" alt="">
               </div>
               <div class="down-content">
-                <h4>Best Education</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4></h4>
+                <p>We educate people to learn about our ancient tradition and culture mentiond in our vedas.</p>
               </div>
             </div>
             
@@ -158,8 +153,8 @@ https://templatemo.com/tm-569-edu-meeting
                 <img src="<?=base_url('public/frontend/images/service-icon-02.png')?>" alt="">
               </div>
               <div class="down-content">
-                <h4>Best Teachers</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4></h4>
+                <p>We train kids and provide them the new opportunity to perform on National and International stage.</p>
               </div>
             </div>
             
@@ -168,8 +163,8 @@ https://templatemo.com/tm-569-edu-meeting
                 <img src="<?=base_url('public/frontend/images/service-icon-03.png')?>" alt="">
               </div>
               <div class="down-content">
-                <h4>Best Students</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4></h4>
+                <p>We encourage the students to learn new things & grow while staying connected to the roots.</p>
               </div>
             </div>
             
@@ -178,8 +173,8 @@ https://templatemo.com/tm-569-edu-meeting
                 <img src="<?=base_url('public/frontend/images/service-icon-02.png')?>" alt="">
               </div>
               <div class="down-content">
-                <h4>Online Meeting</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4></h4>
+                <p>We educate people to learn about our ancient tradition and culture mentiond in our vedas.</p>
               </div>
             </div>
             
@@ -188,8 +183,8 @@ https://templatemo.com/tm-569-edu-meeting
                 <img src="<?=base_url('public/frontend/images/service-icon-03.png')?>" alt="">
               </div>
               <div class="down-content">
-                <h4>Best Networking</h4>
-                <p>Suspendisse tempor mauris a sem elementum bibendum. Praesent facilisis massa non vestibulum.</p>
+                <h4></h4>
+                <p>We train kids and provide them the new opportunity to perform on National and International stage.</p>
               </div>
             </div>
             
@@ -218,7 +213,7 @@ https://templatemo.com/tm-569-edu-meeting
               <li><a href="#">Madhyama Purna</a></li>
               <li><a href="#">Visharad Pratham</a></li>
               <li><a href="#">Visharad Purna</a></li>
-              <li><a href="#">Alankar Pratham</a></li>
+                <li><a href="#">Alankar Pratham</a></li>
               <li><a href="#">Alankar Purna</a></li>
 
             </ul>
@@ -228,78 +223,48 @@ https://templatemo.com/tm-569-edu-meeting
           </div>
         </div>
         <div class="col-lg-8">
-          <div class="row">
+    <div class="row">
+        <?php 
+        // Limit to first 4 records
+        $events = array_slice($events, 0, 4);
+        foreach ($events as $event) { 
+            // Format the created_at date
+            $month = date('M', strtotime($event['created_at']));  // Month (e.g., Nov)
+            $day = date('d', strtotime($event['created_at']));    // Day (e.g., 10)
+        ?>
             <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$22.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="<?=base_url('public/frontend/images/meeting-01.jpg')?>" alt="New Lecturer Meeting"></a>
+                <div class="meeting-item">
+                    <div class="thumb">
+                        <!-- <a href="meeting-details.html"> -->
+                        <a href="<?= base_url('event_php'); ?>">  
+                        <img src="<?= base_url('public/uploads/events/' . $event['images'][0]) ?>" alt="Event Image">
+                        </a>
+                    </div>
+                    <div class="down-content">
+                        <div class="date">
+                            <h6><?= $month ?> <span><?= $day ?></span></h6>
+                        </div>
+                        <!-- <a href="event_page.php"> -->
+                        <a href="<?= base_url('event_php'); ?>">  
+                        <h4><?= $event['title'] ?></h4></a>
+                        <p><?= $event['discription'] ?></p>
+                    </div>
                 </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>10</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
             </div>
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$36.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="<?=base_url('public/frontend/images/meeting-02.jpg')?>" alt="Online Teaching"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>24</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$14.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="<?=base_url('public/frontend/images/meeting-03.jpg')?>" alt="Higher Education"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>26</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Higher Education Conference</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="meeting-item">
-                <div class="thumb">
-                  <div class="price">
-                    <span>$48.00</span>
-                  </div>
-                  <a href="meeting-details.html"><img src="<?=base_url('public/frontend/images/meeting-04.jpg')?>" alt="Student Training"></a>
-                </div>
-                <div class="down-content">
-                  <div class="date">
-                    <h6>Nov <span>30</span></h6>
-                  </div>
-                  <a href="meeting-details.html"><h4>Student Training Meetup</h4></a>
-                  <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php } ?>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
       </div>
+
+
+
+      
     </div>
   </section>
 
@@ -465,15 +430,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <!-- <h4>Lorem ipsum dolor sit amet adipiscing elit</h4> -->
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                    
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -487,15 +444,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                   
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -509,15 +458,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                   
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -531,15 +472,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                    
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -553,15 +486,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                    
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -575,15 +500,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                    
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -597,15 +514,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                    
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -619,15 +528,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <h4></h4>
                 <div class="info">
                   <div class="row">
-                    <div class="col-8">
-                      <!-- <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul> -->
-                    </div>
+                    
                     <div class="col-4">
                        <span></span>
                     </div>
@@ -738,15 +639,17 @@ https://templatemo.com/tm-569-edu-meeting
             <ul>
               <li>
                 <h6>Phone Number</h6>
-                <span>010-020-0340</span>
+                <span>Vaishali  Solanki
+                  +91 94269 85204</span>
               </li>
               <li>
                 <h6>Email Address</h6>
-                <span>info@meeting.edu</span>
+                <span>jiyagorasiya67
+                  21@gmail.com</span>
               </li>
               <li>
-                <h6>Street Address</h6>
-                <span>Rio de Janeiro - RJ, 22795-008, Brazil</span>
+                <h6>Address</h6>
+                <span>78,Aiya Space, 370001, Gujarat</span>
               </li>
               <li>
                 <h6>Website URL</h6>

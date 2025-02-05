@@ -1,0 +1,115 @@
+
+<?php
+class Event_image extends CI_Model{
+
+
+
+    public function get_events(){
+
+        // if(!empty($this->input->get("search"))){
+
+        //   $this->db->like('title', $this->input->get("search"));
+
+        //   $this->db->or_like('description', $this->input->get("search")); 
+
+        // }
+
+        $query = $this->db->get("events");
+
+        return $query->result();
+
+    }
+
+
+
+
+
+    public function insert_entry()
+    {
+    //    // Load the Upload library
+    //     $config['upload_path']   = 'public/uploads/events'; // Path to save uploaded files
+    //     $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; // Allowed file types
+    //     // $config['max_size']      = 2048; // Maximum file size in KB (2 MB)
+    //     $config['encrypt_name']  = true; // Encrypt file names to avoid conflicts
+    //     // print_r($config['upload_path']);
+    //     // die;
+    //     $this->load->library('upload', $config);
+    
+    //     // Initialize response data
+    //     $upload_status = null;
+    
+    //     if (!$this->upload->do_upload('file')) {
+    //         // Handle upload error
+    //         $upload_status = $this->upload->display_errors();
+    //         return ['status' => false, 'error' => $upload_status]; // Return error details
+    //     } else {
+    //         // Handle successful upload
+    //     $upload_data = $this->upload->data();
+    //      $file_name = $upload_data['file_name']; // Get the uploaded file name
+    //      }
+         $config = array(
+        'upload_path'   => 'public/uploads/events',
+        'allowed_types' => 'jpg|gif|png',
+        'overwrite'     => 1,                       
+    );
+
+    $this->load->library('upload', $config);
+    $files=$data['files'];
+    print_r($files);
+    die;
+    foreach ($files['name'] as $key => $image) {
+        $_FILES['images']['name']= $files['name'][$key];
+        $_FILES['images']['type']= $files['type'][$key];
+        $_FILES['images']['tmp_name']= $files['tmp_name'][$key];
+        $_FILES['images']['error']= $files['error'][$key];
+        $_FILES['images']['size']= $files['size'][$key];
+
+        $config['file_name'] = $title .'_'. $image;
+
+        $this->upload->initialize($config);
+
+        if ($this->upload->do_upload($image)) {
+            $this->upload->data();
+        } else {
+            return false;
+        }
+    } 
+    
+        // Gather other form input data
+         $data = [
+            'title' => $this->input->post('title', true),
+            'created_at' => date('Y-m-d'),
+            'discription'  =>  $this->input->post('discription', true) ,// Store the file name/path in the database
+           'file'=> $file_name 
+         ];
+    
+    
+        // Insert data into the database
+        $insert_status = $this->db->insert('events', $data);   
+        if ($insert_status) {
+            return ['status' => true, 'insert_id' => $this->db->insert_id()]; // Return success and record ID
+        } else {
+            return ['status' => false, 'error' => 'Failed to insert record.']; // Return error message
+        }
+    }
+
+
+    public function funcname($id)
+    {
+        $this->db->select('*');
+        $this->db->from('events a'); 
+        $this->db->join('events_images b', 'b.event_id=a.id', 'left');
+        $this->db->where('b.event_id',$id);
+        $this->db->order_by('c.track_title','asc');         
+        $query = $this->db->get(); 
+        if($query->num_rows() != 0)
+        {
+            return $query->result_array();
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+}

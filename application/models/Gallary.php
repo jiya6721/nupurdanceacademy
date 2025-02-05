@@ -42,10 +42,11 @@ class Gallary extends CI_Model{
             $upload_data = $this->upload->data();
             $file_name = $upload_data['file_name']; // Get the uploaded file name
         }
-    
+        $this->load->helper('date');
         // Gather other form input data
         $data = [
             'name' => $this->input->post('name', true),
+            'created_at' => date('Y-m-d'),
             'file'  => $file_name // Store the file name/path in the database
         ];
     

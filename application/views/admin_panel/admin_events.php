@@ -1,79 +1,113 @@
-<html>
-<ol class="carousel-indicators">
 
-  <?php $temp = 0;
+<?php $this->load->view('admin_panel/admin_sidebar_view'); ?>
 
-   if(count($title)){
-    foreach ($title as $value) {
-
-      if ($temp == 0) {
-
-        echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
-        $temp++;
-        }
-        else{
-
-              echo '<li data-target="#myCarousel" data-slide-to="'.$temp.'"></li>';
-
-              $temp++;
-            }
-
-    }
-
-  } ?>
-</ol>
-
-<!-- Wrapper for slides -->
-<div class="carousel-inner" role="listbox">
-
-        <?php $temp = 0;
-
-   if(count($title)){ 
-    foreach ($title as $value) {
-
-      if ($temp == 0) {  ?>
-
-      <div class = "item active">
-      <img src="<?php echo base_url('uploads/events/')?><?php echo $value["IMAGE"] ?>" alt= "Image of every carousel" style="width:100%;height: 100%;">
-
-        <div class ="carousel-caption">
-        <div class ="carousel-caption">
-      <h3><?php echo $value["TITLE"] ?></h3> 
-      <p><?php echo $value["DESCRIPTION"] ?></p>
-      </div>
-  </div>
-
-        <?php $temp++;
-        }
-        else{
-         ?>
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Event</h1>
+          </div>
 
 
-      <div class = "item">
-      <img src="<?php echo base_url('uploads/events/')?><?php echo $value["IMAGE"] ?>" alt="Image of every carousel" style="width:100%;height: 100%;">
-      <div class="carousel-caption">
-        <div class ="carousel-caption">
-      <h3><?php echo $value["TITLE"] ?></h3> 
-      <p><?php echo $value["DESCRIPTION"] ?></p></div> </div>
 
-    <?php
-        $temp++;
-            }
 
-    }
+            <div class="row">
+              <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Add Event</h4>
+                  </div>
+                  <div class="card-body">
 
-  } ?>
+                    <form action="<?=base_url('admin_add_events')?>" method="post" enctype='multipart/form-data'>
 
+
+                      <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="title"class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label>Discription</label>
+                        <input type="text" name="discription" class="form-control">
+                      </div>
+                      <!-- <div class="form-group">
+                        <label>Event File</label>
+                        <input type="file" name="file[]" id="event-file" class="form-control multiple" multiple >
+                      </div> -->
+                      <div class="form-group">
+  <label for="event-file">Event File</label>
+  <input type="file" name="file[]" id="event-file" class="form-control" multiple>
 </div>
 
+                      <button type="submit" class="btn btn-primary text-white">Submit</button>
+                    </form>
+                  </div>
+                </div>
 
-<!-- Left and right controls -->
-<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-  <span class="glyphicon glyphicon-chevron-left"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="right carousel-control" href="#myCarousel" data-slide="next">
-  <span class="glyphicon glyphicon-chevron-right"></span>
-  <span class="sr-only">Next</span>
-</a>
-</html>
+                <?php foreach ($events as $event): ?>
+    <h2><?= $event->title; ?></h2>
+    <p><?= $event->discription; ?></p>
+    <p>Created on: <?= $event->created_at; ?></p>
+
+    <?php if (!empty($event->images)): ?>
+        <?php $images = explode(',', $event->images); ?>
+        <?php foreach ($images as $image): ?>
+            <img src="<?= base_url('public/uploads/events/' . $image); ?>" width="200">
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No images available.</p>
+    <?php endif; ?>
+    <hr>
+<?php endforeach; ?>
+
+                <div class="card mt-5">
+                  <div class="card-header">
+                      List
+                  </div>
+                  <div class="card-body">
+                  <table class="table ">
+
+                  <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Discription</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                    <?php
+
+                    foreach ($events as $key => $event) { ?>
+                      
+
+                      <tr>
+                          <td><?=$event->title?></td>
+                          <td><?=$event->discription?></td>
+                        </tr>
+                     <?php }
+                     
+                    ?>
+                     
+                        
+                       </tbody>
+                    </table>
+
+                  </div>
+                
+                </div>
+                  
+                   
+                  </div>
+                </div>
+                
+              </div>
+              
+
+               </div>
+          </div>
+          
+
+          <?php $this->load->view('admin_panel/admin_footer_view'); ?>
+
+          
+        </section>
+      </div>
