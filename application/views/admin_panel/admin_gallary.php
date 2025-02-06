@@ -39,6 +39,8 @@
                         <tr>
                           <th>Name</th>
                           <th>File</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                     </body>
@@ -47,9 +49,18 @@
                       <tr>
                           <td><?=$gallary->name?></td>
                           <td><?=$gallary->file?></td>
+
+                   <td>
+                    <a href="<?= base_url('admin_gallary/edit/' . $gallary->id) ?>" class="btn btn-warning">Edit</a>
+                  </td>
+                  <td>
+                    <a href="<?= base_url('admin_gallary/delete/' . $gallary->id) ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?');">Delete</a>
+                 </td>
                         </tr>
                      <?php 
-                     }                     
+                     }  
+                     
+                     
                     ?>                                             
                        </tbody>
                     </table>                   

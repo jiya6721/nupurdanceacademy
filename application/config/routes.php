@@ -57,7 +57,7 @@ $route['login'] = 'login';
 $route['Registration'] = 'user_panel/Registration';
 $route['Home'] = 'user_panel/Home';
 $route['sliders'] = 'user_panel/sliders';
-$route['event']='user_panel/event_page;'
+$route['event_page']='user_panel/event_page';
 
 
 
@@ -67,8 +67,14 @@ $route['admin_register_add'] = 'admin_panel/admin_register/register';
 $route['admin_dashboard'] = 'admin_panel/admin_dashboard';
 $route['admin_gallary'] = 'admin_panel/admin_gallary';
 $route['admin_add_gallary'] = 'admin_panel/admin_gallary/add';
+$route['admin_gallary/delete/(:num)'] = 'admin_panel/admin_gallary/delete/$1';
+$route['admin_gallary/edit/(:num)'] = 'admin_panel/admin_gallary/edit/$1';
+$route['admin_gallary/update'] = 'admin_panel/admin_gallary/update';
 $route['admin_sliders'] = 'admin_panel/admin_sliders';
 $route['admin_add_slider'] = 'admin_panel/admin_sliders/add';
+$route['admin_sliders/delete/(:num)'] = 'admin_panel/admin_sliders/delete/$1';
+$route['admin_sliders/edit/(:num)'] = 'admin_panel/admin_sliders/edit/$1';
+$route['admin_sliders/update'] = 'admin_panel/admin_sliders/update';
 $route['admin_course'] = 'admin_panel/admin_course';
 $route['admin_add_course'] = 'admin_panel/admin_course/add';
 $route['admin_alumni'] = 'admin_panel/admin_alumni';

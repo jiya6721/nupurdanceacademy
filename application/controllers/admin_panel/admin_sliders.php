@@ -10,6 +10,7 @@ class admin_sliders extends CI_Controller
 	$this->load->helper('url');
     $this->load->helper('form');
     $this->load->model('Slider');
+    $this->slider = $this->Slider;
 	}
 
     public function index()
@@ -49,11 +50,59 @@ class admin_sliders extends CI_Controller
             }
 
     }
-    }
-   
 
+// Function to delete a slider item
+public function delete($id)
+{
+    $result = $this->slider->delete_entry($id);
     
+    if ($result) {
+        $this->session->set_flashdata('delete_success', 'Slider item deleted successfully.');
+    } else {
+        $this->session->set_flashdata('delete_fail', 'Failed to delete slider item.');
+    }
 
+    redirect(base_url('admin_sliders'));
+}
+
+// Load the edit form
+public function edit($id)
+{
+    $data['sliders'] = $this->slider->get_slider_by_id($id);
+    $this->load->view('admin_panel/edit_slider_view', $data);
+}
+
+// Update slider item
+public function update()
+{
+    $id = $this->input->post('id');
+    $name = $this->input->post('name');
+
+    $update_data = ['name' => $name];
+
+    if (!empty($_FILES['file']['name'])) {
+        $upload_result = $this->Slider->insert_entry('file');
+
+        if ($upload_result['status']) {
+            $update_data['file'] = $upload_result['name'];
+        } else {
+            $this->session->set_flashdata('update_fail', 'File upload failed.');
+            redirect(base_url('admin_sliders'));
+        }
+    }
+
+    $result = $this->Slider->update_entry($id, $update_data);
+
+    if ($result) {
+        $this->session->set_flashdata('update_success', 'Slider item updated successfully.');
+    } else {
+        $this->session->set_flashdata('update_fail', 'Failed to update  item.');
+    }
+    
+    }
+
+
+    }
 ?>
 
 

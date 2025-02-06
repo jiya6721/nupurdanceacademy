@@ -45,6 +45,8 @@
                         <tr>
                           <th>Name</th>
                           <th>File</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -56,7 +58,13 @@
                       <tr>
                           <td><?=$slider->name?></td>
                           <td><?=$slider->file?></td>
-                        </tr>
+                        <td>
+                    <a href="<?= base_url('admin_sliders/edit/' . $slider->id) ?>" class="btn btn-warning">Edit</a>
+                  </td>
+                  <td>
+                    <a href="<?= base_url('admin_sliders/delete/' . $slider->id) ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?');">Delete</a>
+                 </td>
+                 </tr>
                      <?php }
                      
                     ?>

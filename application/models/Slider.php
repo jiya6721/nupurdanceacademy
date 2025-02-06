@@ -1,30 +1,21 @@
 
 <?php
 
-
-
 class Slider extends CI_Model{
 
 
 
     public function get_sliders(){
-
-        // if(!empty($this->input->get("search"))){
-
-        //   $this->db->like('title', $this->input->get("search"));
-
-        //   $this->db->or_like('description', $this->input->get("search")); 
-
-        // }
-
         $query = $this->db->get("sliders");
 
         return $query->result();
 
     }
 
-
-
+    public function get_slider_by_id($id)
+    {
+        return $this->db->get_where('sliders', ['id' => $id])->row();
+    }
 
 
     public function insert_entry()
@@ -68,4 +59,15 @@ class Slider extends CI_Model{
         }
     }
     
+    public function update_entry($id, $data)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('sliders', $data);
+    }
+
+    public function delete_entry($id)
+    {
+        return $this->db->delete('sliders', ['id' => $id]);
+    }
+
 }

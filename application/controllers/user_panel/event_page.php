@@ -1,11 +1,19 @@
 <?php  
 defined('BASEPATH') OR exit('No direct script access allowed');  
   
-class event extends CI_Controller {  
+class event_page extends CI_Controller {  
       
+    public function __construct()
+	{
+	parent::__construct();
+	$this->load->helper('url');
+    // $this->load->helper('form');
+ ///load model
+	}
+
     public function index()  
     {  
-        $this->load->view('event_page');  
+        $this->load->view('user_panel/event_page_view');  
     }  
 }  
 ?>  

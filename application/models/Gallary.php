@@ -5,27 +5,23 @@ class Gallary extends CI_Model{
 
      public function get_gallary(){
 
-    //     if(!empty($this->input->get("search"))){
-
-    //       $this->db->like('title', $this->input->get("search"));
-
-    //       $this->db->or_like('description', $this->input->get("search")); 
-
-    //     }
-
-        $query = $this->db->get("gallary");
+           $query = $this->db->get("gallary");
 
         return $query->result();
 
      }
 
+     public function get_gallary_by_id($id)
+    {
+        return $this->db->get_where('gallary', ['id' => $id])->row();
+    }
 
     public function insert_entry()
     {
         // Load the Upload library
         $config['upload_path']   = 'public/uploads/gallary'; // Path to save uploaded files
-        $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; // Allowed file types
-        $config['max_size']      = 2048; // Maximum file size in KB (2 MB)
+        $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx|mp4'; // Allowed file types
+        $config['max_size']      = 409600; // Maximum file size in KB (200 MB)
         $config['encrypt_name']  = true; // Encrypt file names to avoid conflicts
     
         $this->load->library('upload', $config);
@@ -60,4 +56,15 @@ class Gallary extends CI_Model{
         }
     }
     
+    public function update_entry($id, $data)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('gallary', $data);
+    }
+
+    public function delete_entry($id)
+    {
+        return $this->db->delete('gallary', ['id' => $id]);
+    }
+
 }

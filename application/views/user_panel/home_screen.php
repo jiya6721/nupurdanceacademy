@@ -236,7 +236,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <div class="meeting-item">
                     <div class="thumb">
                         <!-- <a href="meeting-details.html"> -->
-                        <a href="<?= base_url('event_php'); ?>">  
+                        <a href="<?= base_url('event_page'); ?>">  
                         <img src="<?= base_url('public/uploads/events/' . $event['images'][0]) ?>" alt="Event Image">
                         </a>
                     </div>
@@ -244,9 +244,7 @@ https://templatemo.com/tm-569-edu-meeting
                         <div class="date">
                             <h6><?= $month ?> <span><?= $day ?></span></h6>
                         </div>
-                        <!-- <a href="event_page.php"> -->
-                        <a href="<?= base_url('event_php'); ?>">  
-                        <h4><?= $event['title'] ?></h4></a>
+                          <h4><?= $event['title'] ?></h4></a>
                         <p><?= $event['discription'] ?></p>
                     </div>
                 </div>

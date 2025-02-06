@@ -44,14 +44,63 @@ class admin_gallary extends CI_Controller
                 redirect(base_url('admin_dashboard'));
             } else {
                 $this->session->set_flashdata('register_fail', 'Registration failed. Please try again.');
-                redirect(base_url('admin_dashboard'));
+                redirect(base_url('admin_gallary'));
             }
 
     }
+
+// Function to delete a gallery item
+public function delete($id)
+{
+    $result = $this->Gallary->delete_entry($id);
+    
+    if ($result) {
+        $this->session->set_flashdata('delete_success', 'Gallery item deleted successfully.');
+    } else {
+        $this->session->set_flashdata('delete_fail', 'Failed to delete gallery item.');
+    }
+
+    redirect(base_url('admin_gallary'));
+}
+
+// Load the edit form
+public function edit($id)
+{
+    $data['gallary'] = $this->Gallary->get_gallary_by_id($id);
+    $this->load->view('admin_panel/edit_gallary_view', $data);
+}
+
+// Update gallery item
+public function update()
+{
+    $id = $this->input->post('id');
+    $name = $this->input->post('name');
+
+    $update_data = ['name' => $name];
+
+    if (!empty($_FILES['file']['name'])) {
+        $upload_result = $this->Gallary->upload_file('file');
+
+        if ($upload_result['status']) {
+            $update_data['file'] = $upload_result['file_name'];
+        } else {
+            $this->session->set_flashdata('update_fail', 'File upload failed.');
+            redirect(base_url('admin_gallary'));
+        }
+    }
+
+    $result = $this->Gallary->update_entry($id, $update_data);
+
+    if ($result) {
+        $this->session->set_flashdata('update_success', 'Gallery item updated successfully.');
+    } else {
+        $this->session->set_flashdata('update_fail', 'Failed to update gallery item.');
+    }
+    
     }
    
 
-    
+}    
 
 ?>
 
