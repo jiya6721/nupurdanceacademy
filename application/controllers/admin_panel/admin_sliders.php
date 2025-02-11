@@ -11,6 +11,7 @@ class admin_sliders extends CI_Controller
     $this->load->helper('form');
     $this->load->model('Slider');
     $this->slider = $this->Slider;
+    $this->load->library('session'); // Make sure session is loaded
 	}
 
     public function index()
@@ -28,14 +29,9 @@ class admin_sliders extends CI_Controller
     
 
 }
-
     public function add(){
 
-        
-        $this->load->library('session'); // Make sure session is loaded
         $this->slider = new Slider;
-
-
         $data['file']=$_FILES['file'];
         $data['name']=$_POST['name'];
 
@@ -48,7 +44,6 @@ class admin_sliders extends CI_Controller
                 $this->session->set_flashdata('register_fail', 'Registration failed. Please try again.');
                 redirect(base_url('admin_sliders'));
             }
-
     }
 
 // Function to delete a slider item
@@ -77,27 +72,21 @@ public function update()
 {
     $id = $this->input->post('id');
     $name = $this->input->post('name');
-
     $update_data = ['name' => $name];
 
-    if (!empty($_FILES['file']['name'])) {
-        $upload_result = $this->Slider->insert_entry('file');
-
-        if ($upload_result['status']) {
-            $update_data['file'] = $upload_result['name'];
-        } else {
-            $this->session->set_flashdata('update_fail', 'File upload failed.');
-            redirect(base_url('admin_sliders'));
-        }
+    if(isset($_FILES['file'])){
+        $update_data['file']=$_FILES['file'];
     }
 
-    $result = $this->Slider->update_entry($id, $update_data);
-
-    if ($result) {
+    $upload_result = $this->Slider->update_entry($id,$update_data);
+    
+    if ($upload_result) {
+    
         $this->session->set_flashdata('update_success', 'Slider item updated successfully.');
     } else {
         $this->session->set_flashdata('update_fail', 'Failed to update  item.');
     }
+    redirect(base_url('admin_sliders'));
     
     }
 

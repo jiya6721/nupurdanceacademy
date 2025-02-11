@@ -1,6 +1,25 @@
 <?php $this->load->view('admin_panel/admin_sidebar_view'); ?>
 
 
+<?php if($this->session->flashdata('update_success')): ?>
+                <script>
+                  Swal.fire({
+                    title: 'Success!',
+                    text: '<?= $this->session->flashdata('update_success'); ?>',
+                    icon: 'success'
+                  });
+                </script>
+              <?php endif; ?>
+
+              <?php if($this->session->flashdata('update_fail')): ?>
+              <script>
+                Swal.fire({
+                  title: 'Error!',
+                  text: '<?= $this->session->flashdata('update_fail'); ?>',
+                  icon: 'error'
+                });
+              </script>
+<?php endif; ?>
 
       <!-- Main Content -->
       <div class="main-content">
@@ -39,6 +58,8 @@
                         <tr>
                           <th>Name</th>
                           <th>File</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                     </tbody>
@@ -47,6 +68,12 @@
                       <tr>
                           <td><?=$course->name?></td>
                           <td><?=$course->file?></td>
+                          <td><a href="<?= base_url('admin_course/edit/' . $course->id) ?>" class="btn btn-warning">Edit</a>
+                  </td>
+                  <td>
+                    <a href="<?= base_url('admin_course/delete/' . $course->id) ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this file?');">Delete</a>
+                 </td>
+
                         </tr>
                      <?php 
                      }

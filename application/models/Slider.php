@@ -62,7 +62,29 @@ class Slider extends CI_Model{
     public function update_entry($id, $data)
     {
         $this->db->where('id', $id);
-        return $this->db->update('sliders', $data);
+$updateData=[];
+            // print_r($data['file']['name']);die;
+        if(!empty($data['file']['name'])){
+            $config['upload_path']   = 'public/uploads/sliders'; 
+            $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; 
+            $config['encrypt_name']  = true;
+            $this->load->library('upload', $config);
+            $upload_status = null;
+            if (!$this->upload->do_upload('file')) {
+                $upload_status = $this->upload->display_errors();
+                return ['status' => false, 'error' => $upload_status]; 
+            } else {
+                $upload_data = $this->upload->data();
+                $file_name = $upload_data['file_name']; 
+                $updateData['file']=$file_name;
+            }
+        }
+
+        
+        $updateData['name']=$data['name'];
+
+
+        return $this->db->update('sliders', $updateData);
     }
 
     public function delete_entry($id)

@@ -10,6 +10,8 @@ class admin_events extends CI_Controller
 	$this->load->helper('url');
     $this->load->helper('form');
     $this->load->model('Event');
+    $this->event = $this->Event;
+    $this->load->library('session'); // Make sure session is loaded
 	}
 
     public function index()
@@ -51,6 +53,53 @@ class admin_events extends CI_Controller
             }
 
     }
+
+// Function to delete a gallery item
+public function delete($id)
+{
+    $result = $this->Event->delete_entry($id);
+    
+    if ($result) {
+        $this->session->set_flashdata('delete_success', 'Gallery item deleted successfully.');
+    } else {
+        $this->session->set_flashdata('delete_fail', 'Failed to delete gallery item.');
+    }
+
+    redirect(base_url('admin_event'));
+}
+
+// Load the edit form
+public function edit($id)
+{
+    $data['event'] = $this->Event->get_event_by_id($id);
+    print_r($data);
+    die;
+    $this->load->view('admin_panel/edit_event_view', $data);
+}
+
+    public function update()
+    {
+        $id = $this->input->post('id');
+        $name = $this->input->post('title');
+        $update_data = ['title' => $name];
+    
+        if(isset($_FILES['files'])){
+            $update_data['files']=$_FILES['files'];
+        }
+    
+        $upload_result = $this->Event->update_entry($id,$update_data);
+        
+        if ($upload_result) {
+        
+            $this->session->set_flashdata('update_success', 'Slider item updated successfully.');
+        } else {
+            $this->session->set_flashdata('update_fail', 'Failed to update  item.');
+        }
+        redirect(base_url('admin_events'));
+        
+        }
+    
+
     }
 ?>
 

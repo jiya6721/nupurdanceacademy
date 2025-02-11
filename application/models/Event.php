@@ -6,21 +6,14 @@ class Event extends CI_Model{
 
     public function get_events(){
 
-        // if(!empty($this->input->get("search"))){
-
-        //   $this->db->like('title', $this->input->get("search"));
-
-        //   $this->db->or_like('description', $this->input->get("search")); 
-
-        // }
-
         $query = $this->db->get("events");
-
         return $query->result();
 
     }
-
-
+    public function get_event_by_id($id)
+    {
+        return $this->db->get_where('events', ['id' => $id])->row();
+    }
 
     public function index()
     {
@@ -73,68 +66,6 @@ public function getEventsWithImages() {
 
     return array_values($events); // Re-index array for clean output
 }
-
-
-// public function getEventsWithImages() {
-//     $this->db->select('e.*, ei.image');
-//     $this->db->from('events e');
-//     $this->db->join('events_images ei', 'e.id = ei.event_id', 'left');
-//     $query = $this->db->get();
-//     return $query->result();
-// }
-
-
-    // public function insert_entry()
-    // {
-    //     $config = array(
-    //         'upload_path'   => 'public/uploads/events',
-    //         'allowed_types' => 'jpg|gif|png',
-    //         'overwrite'     => 1,                       
-    //     );
-    
-    //     $this->load->library('upload', $config);
-    //     $files=$_FILES;
-    //     foreach ($files as $key => $image) {
-        
-    //         $_FILES['images']['name']= $image['name'][$key];
-    //         $_FILES['images']['type']= $image['type'][$key];
-    //         $_FILES['images']['tmp_name']= $image['tmp_name'][$key];
-    //         $_FILES['images']['error']= $image['error'][$key];
-    //         $_FILES['images']['size']= $image['size'][$key];
-    
-    //         $config['file_name'] = $title .'_'. $image;
-    //         $images[] = $fileName;
-
-    //         $this->upload->initialize($config);
-    
-    //         if ($this->upload->do_upload($image)) {
-    //             $this->upload->data();
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-
-    //         print_R($images);
-    //         die;
-    
-    //     // Gather other form input data
-    //     $data = [
-    //         'title' => $this->input->post('title', true),
-    //         'created_at' => date('Y-m-d'),
-    //         'discription'  =>  $this->input->post('discription', true) ,// Store the file name/path in the database
-    //         'file'=> $_FILES 
-    //     ];
-    
-    
-    //     // Insert data into the database
-    //     $insert_status = $this->db->insert('events', $data);   
-    //     if ($insert_status) {
-    //         return ['status' => true, 'insert_id' => $this->db->insert_id()]; // Return success and record ID
-    //     } else {
-    //         return ['status' => false, 'error' => 'Failed to insert record.']; // Return error message
-    //     }
-    // }
-
    
     public function insert_entry()
     {
@@ -211,6 +142,37 @@ public function getEventsWithImages() {
         }
     }
     
+    public function update_entry($id, $data)
+    {
+        $this->db->where('id', $id);
+$updateData=[];
+            // print_r($data['file']['name']);die;
+        if(!empty($data['files']['title'])){
+            $config['upload_path']   = 'public/uploads/events'; 
+            $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; 
+            $config['encrypt_name']  = true;
+            $this->load->library('upload', $config);
+            $upload_status = null;
+            if (!$this->upload->do_upload('files')) {
+                $upload_status = $this->upload->display_errors();
+                return ['status' => false, 'error' => $upload_status]; 
+            } else {
+                $upload_data = $this->upload->data();
+                $file_name = $upload_data['file_name']; 
+                $updateData['files']=$file_name;
+            }
+        }
 
-    
+        
+        $updateData['title']=$data['title'];
+
+
+        return $this->db->update('events', $updateData);
+    }
+
+    public function delete_entry($id)
+    {
+        return $this->db->delete('events', ['id' => $id]);
+    }
+
 }

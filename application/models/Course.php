@@ -6,20 +6,14 @@ class Course extends CI_Model{
 
     public function get_course(){
 
-    //     if(!empty($this->input->get("search"))){
-
-    //       $this->db->like('title', $this->input->get("search"));
-
-    //       $this->db->or_like('description', $this->input->get("search")); 
-
-    //     }
-
         $query = $this->db->get("course");
-
         return $query->result();
-
     }
 
+    public function get_course_by_id($id)
+    {
+        return $this->db->get_where('course', ['id' => $id])->row();
+    }
 
     public function insert_entry()
     {
@@ -59,6 +53,39 @@ class Course extends CI_Model{
         } else {
             return ['status' => false, 'error' => 'Failed to insert record.']; // Return error message
         }
+    }
+ 
+    public function update_entry($id, $data)
+    {
+        $this->db->where('id', $id);
+$updateData=[];
+            // print_r($data['file']['name']);die;
+        if(!empty($data['file']['name'])){
+            $config['upload_path']   = 'public/uploads/gallary'; 
+            $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; 
+            $config['encrypt_name']  = true;
+            $this->load->library('upload', $config);
+            $upload_status = null;
+            if (!$this->upload->do_upload('file')) {
+                $upload_status = $this->upload->display_errors();
+                return ['status' => false, 'error' => $upload_status]; 
+            } else {
+                $upload_data = $this->upload->data();
+                $file_name = $upload_data['file_name']; 
+                $updateData['file']=$file_name;
+            }
+        }
+
+        
+        $updateData['name']=$data['name'];
+
+
+        return $this->db->update('course', $updateData);
+    }
+
+    public function delete_entry($id)
+    {
+        return $this->db->delete('course', ['id' => $id]);
     }
     
 }

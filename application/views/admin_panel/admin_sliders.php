@@ -1,6 +1,27 @@
 
 <?php $this->load->view('admin_panel/admin_sidebar_view'); ?>
 
+
+<?php if($this->session->flashdata('update_success')): ?>
+                <script>
+                  Swal.fire({
+                    title: 'Success!',
+                    text: '<?= $this->session->flashdata('update_success'); ?>',
+                    icon: 'success'
+                  });
+                </script>
+              <?php endif; ?>
+
+              <?php if($this->session->flashdata('update_fail')): ?>
+              <script>
+                Swal.fire({
+                  title: 'Error!',
+                  text: '<?= $this->session->flashdata('update_fail'); ?>',
+                  icon: 'error'
+                });
+              </script>
+<?php endif; ?>
+
       <!-- Main Content -->
       <div class="main-content">
         <section class="section">
@@ -68,8 +89,6 @@
                      <?php }
                      
                     ?>
-                     
-                        
                        </tbody>
                     </table>
 
