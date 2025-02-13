@@ -57,8 +57,8 @@ $route['login'] = 'login';
 $route['Registration'] = 'user_panel/Registration';
 $route['Home'] = 'user_panel/Home';
 $route['sliders'] = 'user_panel/sliders';
-$route['event_page']='user_panel/event_page';
-
+$route['event_page']='user_panel/event_page_view';
+//$route['event_page']='user_panel/event_page_view';
 
 
 $route['admin_login'] = 'admin_panel/admin_login';

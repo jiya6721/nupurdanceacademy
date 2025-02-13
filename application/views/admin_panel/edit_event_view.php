@@ -5,10 +5,8 @@
         <div class="section-header">
             <h1>Edit Event</h1>
         </div>
-        <?php echo "<pre>";
-        print_R($event); 
-        die();?>
 
+       
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
@@ -21,7 +19,7 @@
 
                             <div class="form-group">
                                 <label>Event title</label>
-                                <input type="text" name="title" class="form-control"><?= isset($event->title) ? htmlspecialchars($event->title) : '' ?>
+                                <input type="text" name="title" class="form-control" value="<?= isset($event->title) ? htmlspecialchars($event->title) : '' ?>">
                             </div>
 
                             <div class="form-group">
@@ -29,15 +27,35 @@
     <textarea name="discription" class="form-control"><?= isset($event->discription) ? htmlspecialchars($event->discription) : '' ?></textarea>
 </div>
 
-                            <div class="form-group">
-                                <label>Current File</label>
-                                <p><?= $event->files ?></p>
-                            </div>
+                           
 
                             <div class="form-group">
                                 <label>Upload New File (Optional)</label>
-                                <input type="files" name="files" class="form-control" multiple>
+                                <input type="file" name="files[]" class="form-control" multiple>
                             </div>
+
+                            <div class="form-group">
+
+
+                            
+                            
+                                    <label>Current File</label>
+                                    <div class="row">
+
+                                    <?php
+
+                                    $images=explode(',',$event->images);
+
+                                    foreach($images as $image){ ?>
+                                    <div class="col-md-3">
+
+                                        <img height=100 width=100 src="<?=base_url('public/uploads/events/'.$image)?>" alt="no image" srcset="">
+                                    </div>
+
+                                    <?php } ?>
+                                    </div>
+                                    
+                                    </div>
 
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>

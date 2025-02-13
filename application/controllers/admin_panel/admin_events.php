@@ -71,17 +71,23 @@ public function delete($id)
 // Load the edit form
 public function edit($id)
 {
-    $data['event'] = $this->Event->get_event_by_id($id);
-    print_r($data);
-    die;
+    // $events = $this->Event->get_events_with_images_id();   
+    $data['event'] = $this->Event->get_events_with_images_id($id)[0];
+    // print_R($data);
+    // die;
     $this->load->view('admin_panel/edit_event_view', $data);
-}
+
+    }
 
     public function update()
     {
         $id = $this->input->post('id');
         $name = $this->input->post('title');
-        $update_data = ['title' => $name];
+        $update_data=[];
+        $update_data['title'] = $name;
+        $update_data['discription'] = $_POST['discription'];
+
+
     
         if(isset($_FILES['files'])){
             $update_data['files']=$_FILES['files'];

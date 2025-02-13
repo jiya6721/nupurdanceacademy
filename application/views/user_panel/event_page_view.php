@@ -119,13 +119,11 @@ src="https://code.jquery.com/jquery-1.12.0.min.js">
       </div>
   </header>
   
-<?php
-// $events = array_slice($events, 0, 4);
-//         foreach ($events as $event) { 
+  
+<h1><?= $event['title'] ?></h1>
 
-//         }
-        ?>
-    <div class="carousel">
+
+     <div class="carousel">
         <div class="carousel-item">
            
                 <img src=

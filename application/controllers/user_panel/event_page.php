@@ -7,13 +7,25 @@ class event_page extends CI_Controller {
 	{
 	parent::__construct();
 	$this->load->helper('url');
+    $this->load->model('Event');
     // $this->load->helper('form');
- ///load model
+ 
 	}
+
+    
+    // public function view($event_id)  
+    // {  
+    //     // Fetch event data from the model
+    //     $event = $this->Event->get_event_by_id($event_id);
+        
+    //     if (!$event) {
+    //         show_404(); // Show 404 if event is not found
+    //     }
+    // }  
 
     public function index()  
     {  
         $this->load->view('user_panel/event_page_view');  
     }  
-}  
+}
 ?>  

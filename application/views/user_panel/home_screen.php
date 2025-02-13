@@ -235,8 +235,8 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="col-lg-6">
                 <div class="meeting-item">
                     <div class="thumb">
-                        <!-- <a href="meeting-details.html"> -->
-                        <a href="<?= base_url('event_page'); ?>">  
+                    <a href="<?= base_url('user_panel/event_page_view/') ?>">
+                         
                         <img src="<?= base_url('public/uploads/events/' . $event['images'][0]) ?>" alt="Event Image">
                         </a>
                     </div>
@@ -253,17 +253,10 @@ https://templatemo.com/tm-569-edu-meeting
     </div>
 </div>
 
-
 </div>
-
 </div>
-
-      </div>
-
-
-
-      
-    </div>
+  </div>
+        </div>
   </section>
 
   <section class="apply-now" id="apply">
@@ -295,57 +288,33 @@ https://templatemo.com/tm-569-edu-meeting
           <div class="accordions is-first-expanded">
             <article class="accordion">
                 <div class="accordion-head">
-                    <span>About Edu Meeting HTML Template</span>
+                    <span>About NUPUR NRITYA</span>
                     <span class="icon">
                         <i class="icon fa fa-chevron-right"></i>
                     </span>
                 </div>
                 <div class="accordion-body">
                     <div class="content">
-                        <p>If you want to get the latest collection of HTML CSS templates for your websites, you may visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">Too CSS website</a>. If you need a working contact form script, please visit <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more info.</p>
+                        <p>Welcome to <b>Nupur Nritya</b>, a premier institute dedicated to the rich tradition of <b>Bharatanatyam</b> for the past <b>25 years</b>. Our mission is to nurture passionate dancers and promote the timeless beauty of Indian classical dance on both national and international platforms.</p>
+                        <p>At <b>Nupur Nritya</b>, we believe that dance is not just an art form but a way of life—a blend of discipline, devotion, and expression. Our structured training program <b>covers theory, technique, expressions (Abhinaya), and stage performance skills,</b> ensuring students develop a deep connection with the art.</p>
                     </div>
                 </div>
             </article>
             <article class="accordion">
                 <div class="accordion-head">
-                    <span>HTML CSS Bootstrap Layout</span>
+                    <span>What we offer</span>
                     <span class="icon">
                         <i class="icon fa fa-chevron-right"></i>
                     </span>
                 </div>
                 <div class="accordion-body">
                     <div class="content">
-                        <p>Etiam posuere metus orci, vel consectetur elit imperdiet eu. Cras ipsum magna, maximus at semper sit amet, eleifend eget neque. Nunc facilisis quam purus, sed vulputate augue interdum vitae. Aliquam a elit massa.<br><br>
-                        Nulla malesuada elit lacus, ac ultricies massa varius sed. Etiam eu metus eget nibh consequat aliquet. Proin fringilla, quam at euismod porttitor, odio odio tempus ligula, ut feugiat ex erat nec mauris. Donec viverra velit eget lectus sollicitudin tincidunt.</p>
-                    </div>
-                </div>
-            </article>
-            <article class="accordion">
-                <div class="accordion-head">
-                    <span>Please tell your friends</span>
-                    <span class="icon">
-                        <i class="icon fa fa-chevron-right"></i>
-                    </span>
-                </div>
-                <div class="accordion-body">
-                    <div class="content">
-                        <p>Ut vehicula mauris est, sed sodales justo rhoncus eu. Morbi porttitor quam velit, at ullamcorper justo suscipit sit amet. Quisque at suscipit mi, non efficitur velit.<br><br>
-                        Cras et tortor semper, placerat eros sit amet, porta est. Mauris porttitor sapien et quam volutpat luctus. Nullam sodales ipsum ac neque ultricies varius.</p>
-                    </div>
-                </div>
-            </article>
-            <article class="accordion last-accordion">
-                <div class="accordion-head">
-                    <span>Share this to your colleagues</span>
-                    <span class="icon">
-                        <i class="icon fa fa-chevron-right"></i>
-                    </span>
-                </div>
-                <div class="accordion-body">
-                    <div class="content">
-                        <p>Maecenas suscipit enim libero, vel lobortis justo condimentum id. Interdum et malesuada fames ac ante ipsum primis in faucibus.<br><br>
-                        Sed eleifend metus sit amet magna tristique, posuere laoreet arcu semper. Nulla pellentesque ut tortor sit amet maximus. In eu libero ullamcorper, semper nisi quis, convallis nisi.</p>
-                    </div>
+                        <p>✅ <b>Expert Training in Bharatanatyam – </b>Learn from experienced gurus dedicated to preserving and evolving the classical tradition.</p>
+                        <p>✅ <b>Performance Opportunities – </b> Students get the chance to showcase their talent at corporate shows, national & international competitions, and local cultural events.</p>
+                        <p>✅ <b>Arangetram & Stage Exposure – </b>We guide students through their Arangetram (solo debut performance) and provide opportunities to perform at prestigious festivals and concerts.</p>
+                        <p>✅ <b>Holistic Development – </b>Beyond dance, we focus on discipline, confidence building, and cultural enrichment.</p>
+                        <p>Over the years, <b>Nupur Nritya</b> has trained numerous dancers who have gone on to win accolades, perform globally, and continue the legacy of Bharatanatyam. Whether you are a beginner or an advanced learner, we invite you to join our <b>Nritya Parivaar</b> (dance family) and experience the magic of movement and expression.</p>
+                      </div>
                 </div>
             </article>
         </div>

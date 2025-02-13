@@ -23,10 +23,22 @@ class Event extends CI_Model{
         // Pass the data to a view
         $this->load->view('events_view', $data);
     }
+ 
     
+
+    public function get_events_with_images_id($id)
+    {
+        $this->db->select('events.id, events.title, events.discription, events.created_at, GROUP_CONCAT(events_images.image) as images');
+        $this->db->from('events')->where('events.id',$id);
+        $this->db->join('events_images', 'events.id = events_images.event_id', 'left');
+        $this->db->group_by('events.id'); // Group by event ID to prevent duplication
+        $query = $this->db->get();
+        
+        return $query->result(); // Returns an array of objects
+    }
     public function get_events_with_images()
 {
-    $this->db->select('events.id, events.title, events.description, events.created_at, GROUP_CONCAT(events_images.image_path) as images');
+    $this->db->select('events.id, events.title, events.discription, events.created_at, GROUP_CONCAT(events_images.image) as images');
     $this->db->from('events');
     $this->db->join('events_images', 'events.id = events_images.event_id', 'left');
     $this->db->group_by('events.id'); // Group by event ID to prevent duplication
@@ -145,27 +157,46 @@ public function getEventsWithImages() {
     public function update_entry($id, $data)
     {
         $this->db->where('id', $id);
-$updateData=[];
-            // print_r($data['file']['name']);die;
-        if(!empty($data['files']['title'])){
-            $config['upload_path']   = 'public/uploads/events'; 
-            $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx'; 
-            $config['encrypt_name']  = true;
-            $this->load->library('upload', $config);
-            $upload_status = null;
-            if (!$this->upload->do_upload('files')) {
-                $upload_status = $this->upload->display_errors();
-                return ['status' => false, 'error' => $upload_status]; 
-            } else {
+        
+        $config = array(
+            'upload_path'   => 'public/uploads/events',
+            'allowed_types' => 'jpg|gif|png|jpeg',
+            // 'max_size'      => 2048, // 2MB limit
+            'overwrite'     => false,                       
+        );
+    
+        $this->load->library('upload', $config);
+        $updateData=[];
+        foreach ($_FILES['files']['name'] as $key => $image_name) {
+            $_FILES['image']['name']     = $_FILES['files']['name'][$key];
+            $_FILES['image']['type']     = $_FILES['files']['type'][$key];
+            $_FILES['image']['tmp_name'] = $_FILES['files']['tmp_name'][$key];
+            $_FILES['image']['error']    = $_FILES['files']['error'][$key];
+            $_FILES['image']['size']     = $_FILES['files']['size'][$key];
+    
+            $config['file_name'] = rand() . '-' . $image_name;
+            $this->upload->initialize($config);
+            if ($this->upload->do_upload('image')) {
                 $upload_data = $this->upload->data();
-                $file_name = $upload_data['file_name']; 
-                $updateData['files']=$file_name;
+                $images[] = $upload_data['file_name']; // Store uploaded file name
+            } else {
+
+                print_r($this->upload->display_errors());
+                die;
+                return ['status' => false, 'error' => $this->upload->display_errors()];
+            
             }
         }
+           foreach ($images as $key => $value) {
+                $data = [
+                    'image'       => $value,
+                    'event_id'  => $id,
+                ];
+                $insert_status = $this->db->insert('events_images', $data);
+            }
 
-        
-        $updateData['title']=$data['title'];
-
+        $updateData['title']=$_POST['title'];
+        $updateData['discription']=$_POST['discription'];
 
         return $this->db->update('events', $updateData);
     }
