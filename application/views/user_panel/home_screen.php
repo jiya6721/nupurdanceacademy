@@ -213,7 +213,7 @@ https://templatemo.com/tm-569-edu-meeting
               <li><a href="#">Madhyama Purna</a></li>
               <li><a href="#">Visharad Pratham</a></li>
               <li><a href="#">Visharad Purna</a></li>
-                <li><a href="#">Alankar Pratham</a></li>
+              <li><a href="#">Alankar Pratham</a></li>
               <li><a href="#">Alankar Purna</a></li>
 
             </ul>
@@ -235,7 +235,7 @@ https://templatemo.com/tm-569-edu-meeting
             <div class="col-lg-6">
                 <div class="meeting-item">
                     <div class="thumb">
-                    <a href="<?= base_url('user_panel/event_page_view/') ?>">
+                    <a href="<?= base_url('event_page/'.$event['id']) ?>">
                          
                         <img src="<?= base_url('public/uploads/events/' . $event['images'][0]) ?>" alt="Event Image">
                         </a>

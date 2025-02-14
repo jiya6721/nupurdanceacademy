@@ -13,19 +13,13 @@ class event_page extends CI_Controller {
 	}
 
     
-    // public function view($event_id)  
-    // {  
-    //     // Fetch event data from the model
-    //     $event = $this->Event->get_event_by_id($event_id);
-        
-    //     if (!$event) {
-    //         show_404(); // Show 404 if event is not found
-    //     }
-    // }  
-
-    public function index()  
+    public function index($id)  
     {  
-        $this->load->view('user_panel/event_page_view');  
+
+                $event = $this->Event->get_events_with_images_id($id);
+                $data['event'] = $event;
+
+        $this->load->view('user_panel/event_page_view',$data);  
     }  
 }
 ?>  
