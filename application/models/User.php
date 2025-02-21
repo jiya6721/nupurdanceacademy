@@ -28,12 +28,12 @@ class User extends CI_Model{
     public function insert_entry()
 
     {    
-        $this->name    = $_POST['frist_name']; // please read the below note
+        $this->name    = $_POST['name']; // please read the below note
         $this->email  = $_POST['email'];
 
         $this->db->insert('users', $this);
 
-    $this->password = password_hash($data['password'], PASSWORD_BCRYPT); // bcrypt is a secure hashing algorithm
+    $this->password = password_hash($_POST['password'], PASSWORD_BCRYPT); // bcrypt is a secure hashing algorithm
 
     $insert_status = $this->db->insert('users', $this);
 

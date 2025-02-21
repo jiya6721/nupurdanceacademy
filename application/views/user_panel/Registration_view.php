@@ -55,7 +55,7 @@
   
   <body>
 
-  <form method="post"  enctype="multipart/formdata" action="<?php echo site_url('Registration_op');?>">  
+  <form method="post"  enctype="multipart/formdata" action="<?php echo site_url('Registration');?>">  
     <fieldset>
   <div class="form-group">
       <label for="name">Name:</label>

@@ -199,7 +199,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Upcoming Meetings</h2>
+            <h2>Events</h2>
           </div>
         </div>
         <div class="col-lg-4">
