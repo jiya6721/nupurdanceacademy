@@ -65,21 +65,7 @@
                   </div>
                 </div>
 
-                <?php foreach ($events as $event): ?>
-    <h2><?= $event->title; ?></h2>
-    <p><?= $event->discription; ?></p>
-    <p>Created on: <?= $event->created_at; ?></p>
 
-    <?php if (!empty($event->images)): ?>
-        <?php $images = explode(',', $event->images); ?>
-        <?php foreach ($images as $image): ?>
-            <img src="<?= base_url('public/uploads/events/' . $image); ?>" width="200">
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p>No images available.</p>
-    <?php endif; ?>
-    <hr>
-<?php endforeach; ?>
 
                 <div class="card mt-5">
                   <div class="card-header">
@@ -129,14 +115,9 @@
                 </div>
                 
               </div>
-              
-
-               </div>
+            </div>
           </div>
-          
 
           <?php $this->load->view('admin_panel/admin_footer_view'); ?>
-
-          
         </section>
       </div>

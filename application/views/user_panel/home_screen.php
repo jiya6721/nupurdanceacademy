@@ -206,15 +206,19 @@ https://templatemo.com/tm-569-edu-meeting
           <div class="categories">
             <h4>9 Year Course</h4>
             <ul>
-              <li><a href="#">Prarambhik</a></li>
-              <li><a href="#">Praveshika Pratham</a></li>
-              <li><a href="#">Praveshika Purna</a></li>
-              <li><a href="#">Madhyama Pratham</a></li>
-              <li><a href="#">Madhyama Purna</a></li>
-              <li><a href="#">Visharad Pratham</a></li>
-              <li><a href="#">Visharad Purna</a></li>
-              <li><a href="#">Alankar Pratham</a></li>
-              <li><a href="#">Alankar Purna</a></li>
+            <div class="thumb">
+
+            <?php
+            foreach ($courses as $key => $course) { ?>
+            <li><a href="<?= base_url('course_page/'.$course->id) ?>"><?=$course->name?></a></li><br>
+          
+
+            <?php 
+              } 
+            ?>
+              
+
+              
 
             </ul>
             <div class="main-button-red">
@@ -284,6 +288,7 @@ https://templatemo.com/tm-569-edu-meeting
             </div>
           </div>
         </div>
+  
         <div class="col-lg-6">
           <div class="accordions is-first-expanded">
             <article class="accordion">
@@ -321,6 +326,7 @@ https://templatemo.com/tm-569-edu-meeting
         </div>
       </div>
     </div>
+  
   </section>
 
   <section class="our-courses" id="courses">
@@ -331,10 +337,15 @@ https://templatemo.com/tm-569-edu-meeting
             <h2>ACHIVEMENTS</h2>
           </div>
         </div>
+
         <div class="col-lg-12">
           <div class="owl-courses-item owl-carousel">
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
+
+          
+            <?php foreach ($galleries as $gallary): ?>
+
+              <div class="item">
+              <img src="<?=base_url('public/uploads/gallary/'.$gallary->file)?>" alt="no image">
               <div class="down-content">
                 <h4></h4>
                 <div class="info">
@@ -349,160 +360,11 @@ https://templatemo.com/tm-569-edu-meeting
                 </div>
               </div>
             </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                    
-                    </div>
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/modhera.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    <div class="col-8">
-                     
-                    </div>
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/udaipur.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
-              <div class="down-content">
-                <!-- <h4>Lorem ipsum dolor sit amet adipiscing elit</h4> -->
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                   
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/modhera.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                   
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/udaipur.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/nataraja1.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/khelmahakumbh.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/modhera.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <img src="<?=base_url('public/frontend/images/udaipur.jpg')?>" alt="">
-              <div class="down-content">
-                <h4></h4>
-                <div class="info">
-                  <div class="row">
-                    
-                    <div class="col-4">
-                       <span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <?php endforeach; ?>
+          </div>
+
+            
+            
           </div>
         </div>
       </div>

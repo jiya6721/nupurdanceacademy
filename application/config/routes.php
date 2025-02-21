@@ -55,15 +55,20 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'login';
 $route['Registration'] = 'user_panel/Registration';
+$route['Registration_op'] = 'user_panel/Registration/register';
+
 $route['Home'] = 'user_panel/Home';
+
 $route['sliders'] = 'user_panel/sliders';
 $route['event_page/(:num)']='user_panel/event_page/index/$1';
-//$route['event_page']='user_panel/event_page_view';
+// $route['course_page/(:num)']='user_panel/course_page/index/$1';
+$route['course_page/(:num)'] = 'user_panel/course_page/index/$1';
 
 
 $route['admin_login'] = 'admin_panel/admin_login';
 $route['admin_register'] = 'admin_panel/admin_register';
 $route['admin_register_add'] = 'admin_panel/admin_register/register';
+
 $route['admin_dashboard'] = 'admin_panel/admin_dashboard';
 
 $route['admin_gallary'] = 'admin_panel/admin_gallary';

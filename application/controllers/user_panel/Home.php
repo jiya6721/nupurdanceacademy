@@ -20,11 +20,19 @@ class Home extends CI_Controller {
         $this->slider = new Slider;
         $data['sliders'] = $this->slider->get_sliders();
 
-        
         $this->load->model('Event');
         $this->events = new Event;
         $data['events'] = $this->events->getEventsWithImages();
+
+        $this->load->model('Gallary');
+        $this->gallary = new Gallary;
+        $data['galleries'] = $this->gallary->get_gallary();
         
+        $this->load->model('Course');
+        $this->course = new Course;
+        $data['courses'] = $this->course->get_course();
+
+
         $this->load->view('user_panel/home_screen',$data);  
     }  
     

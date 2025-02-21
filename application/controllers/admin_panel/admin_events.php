@@ -27,7 +27,6 @@ class admin_events extends CI_Controller
     public function get_events_list()
 {
     
-
 }
 
     public function add(){
@@ -65,7 +64,7 @@ public function delete($id)
         $this->session->set_flashdata('delete_fail', 'Failed to delete gallery item.');
     }
 
-    redirect(base_url('admin_event'));
+    redirect(base_url('admin_events'));
 }
 
 // Load the edit form

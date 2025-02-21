@@ -84,7 +84,7 @@ public function getEventsWithImages() {
         $config = array(
             'upload_path'   => 'public/uploads/events',
             'allowed_types' => 'jpg|gif|png|jpeg',
-            'max_size'      => 2048, // 2MB limit
+            // 'max_size'      => 2048, // 2MB limit
             'overwrite'     => false,                       
         );
     
@@ -156,7 +156,6 @@ public function getEventsWithImages() {
     
     public function update_entry($id, $data)
     {
-        $this->db->where('id', $id);
         
         $config = array(
             'upload_path'   => 'public/uploads/events',
@@ -197,7 +196,7 @@ public function getEventsWithImages() {
 
         $updateData['title']=$_POST['title'];
         $updateData['discription']=$_POST['discription'];
-
+        $this->db->where('id', $id);
         return $this->db->update('events', $updateData);
     }
 

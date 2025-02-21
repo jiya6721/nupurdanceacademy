@@ -55,7 +55,7 @@
   
   <body>
 
-  <form method="post"  enctype="multipart/formdata" action="<?php echo site_url('Registration/register');?>">  
+  <form method="post"  enctype="multipart/formdata" action="<?php echo site_url('Registration_op');?>">  
     <fieldset>
   <div class="form-group">
       <label for="name">Name:</label>
@@ -68,8 +68,8 @@
     </div>
 
 	<div class="form-group">
-      <label for="phone">Phone Number:</label>
-      <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number">
+      <label for="contact">Phone Number:</label>
+      <input type="contact" class="form-control" name="contact" placeholder="Enter Phone Number">
     </div>
 
 	<div class="form-group">
@@ -83,13 +83,13 @@
   </div>
 
   <div class="form-group">
-      <label for="address">Address:</label>
+      <label for="contact">Address :</label>
       <input type="text" class="form-control" name="address" placeholder="Enter address">
     </div>
 
     <input type="submit" name="register" class="btn btn-success" value="Register" src="home_screen"/>
   </form>
-</div>>
+</div>
 </fieldset>
 </body>
 </html>
