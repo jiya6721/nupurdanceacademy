@@ -1,3 +1,4 @@
+<?php $this->load->view('user_panel/header');?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,6 +123,6 @@
             }, 3000); // Auto-slide every 3 seconds
         });
     </script>
-
+<?php $this->load->view('user_panel/footer');?>
 </body>
 </html>

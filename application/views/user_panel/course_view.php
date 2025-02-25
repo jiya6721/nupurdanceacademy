@@ -1,6 +1,9 @@
+<?php $this->load->view('user_panel/header');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bharatanatyam Course Files</title>
@@ -81,8 +84,9 @@
     </script>
 </head>
 <body>
+    <div class="container mt-5">
     <h1>Bharatanatyam Course Files</h1>
-    
+    </div>
     <?php if (!empty($course->file)): ?>
         <div>
             <h2><?= htmlspecialchars($course->name) ?></h2>
@@ -101,5 +105,8 @@
     <?php else: ?>
         <p>No file found.</p>
     <?php endif; ?>
+
+    <?php $this->load->view('user_panel/footer');?>
+
 </body>
 </html>
