@@ -44,7 +44,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="col-lg-8 col-sm-8">
         <div class="left-content">
             <!-- <h1>Hello</h1> -->
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
+            <!-- <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p> -->
           </div>
         </div>
         <div class="col-lg-4 col-sm-4">
@@ -269,21 +269,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-6 align-self-center">
           <div class="row">
             <div class="col-lg-12">
-              <div class="item">
-                <h3>APPLY FOR BACHELOR DEGREE</h3>
-                <p>You are allowed to use this edu meeting CSS template for your school or university or business. You can feel free to modify or edit this layout.</p>
-                <div class="main-button-red">
-                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
-              </div>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="item">
-                <h3>APPLY FOR BACHELOR DEGREE</h3>
-                <p>You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.</p>
-                <div class="main-button-yellow">
-                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
-              </div>
+              <!-- </div> -->
               </div>
             </div>
           </div>
@@ -334,7 +320,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>ACHIVEMENTS</h2>
+            <h2>GALLERY & ACHIEVEMENTS</h2>
           </div>
         </div>
 
@@ -377,7 +363,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-6">
           <div class="row">
             <div class="col-lg-12">
-              <h2>A Few Facts About Our University</h2>
+              <h2>A Few Facts About Nupur Nritya</h2>
             </div>
             <div class="col-lg-6">
               <div class="row">
@@ -389,8 +375,8 @@ https://templatemo.com/tm-569-edu-meeting
                 </div>
                 <div class="col-12">
                   <div class="count-area-content">
-                    <div class="count-digit">126</div>
-                    <div class="count-title">Current Teachers</div>
+                    <div class="count-digit">150</div>
+                    <div class="count-title">Current Students</div>
                   </div>
                 </div>
               </div>
@@ -399,13 +385,13 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="row">
                 <div class="col-12">
                   <div class="count-area-content new-students">
-                    <div class="count-digit">2345</div>
-                    <div class="count-title">New Students</div>
+                    <div class="count-digit">300</div>
+                    <div class="count-title">Passed out Students</div>
                   </div>
                 </div> 
                 <div class="col-12">
                   <div class="count-area-content">
-                    <div class="count-digit">32</div>
+                    <div class="count-digit">500</div>
                     <div class="count-title">Awards</div>
                   </div>
                 </div>
@@ -415,7 +401,7 @@ https://templatemo.com/tm-569-edu-meeting
         </div> 
         <div class="col-lg-6 align-self-center">
           <div class="video">
-            <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="<?=base_url('public/frontend/images/play-icon.png')?>" alt=""></a>
+            <a href="https://www.youtube.com/watch?v=qFfu5oWCma0" target="_blank"><img src="<?=base_url('public/frontend/images/play-icon.png')?>" alt=""></a>
           </div>
         </div>
       </div>

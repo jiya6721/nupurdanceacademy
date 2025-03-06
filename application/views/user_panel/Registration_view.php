@@ -77,10 +77,10 @@
       <input type="text" class="form-control" name="password" placeholder="Enter Password">
     </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="dob">Enter your Date of Birth:</label>
     <input type="date" id="dob" name="dob"  />
-  </div>
+  </div> -->
 
   <div class="form-group">
       <label for="contact">Address :</label>

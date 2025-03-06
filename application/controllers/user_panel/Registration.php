@@ -21,12 +21,12 @@ class Registration extends CI_Controller
         }
       }
 
-    private function calculate_age($dob)
-    {
-        $dob = new DateTime($dob);
-        $today = new DateTime('today');
-        return $dob->diff($today)->y;
-    }
+    // private function calculate_age($dob)
+    // {
+    //     $dob = new DateTime($dob);
+    //     $today = new DateTime('today');
+    //     return $dob->diff($today)->y;
+    // }
 
     public function register()
     {
@@ -36,7 +36,7 @@ class Registration extends CI_Controller
         $password = $this->input->post('password');
         $address = $this->input->post('address');
         $contact = $this->input->post('contact');
-        $dob = $this->input->post('dob');
+        // $dob = $this->input->post('dob');
 
         // Validate email uniqueness
         $existing_user = $this->db->get_where('users', ['email' => $email])->row();
@@ -46,15 +46,15 @@ class Registration extends CI_Controller
             exit;
         }
 
-        // Validate future DOB
-        $dob_date = new DateTime($dob);
-        $today = new DateTime('today');
+        // // Validate future DOB
+        // $dob_date = new DateTime($dob);
+        // $today = new DateTime('today');
 
-        if ($dob_date > $today) {
-            $this->session->set_flashdata('error', 'Date of Birth cannot be in the future.');
-            redirect('Registration');
-            exit;
-        }
+        // if ($dob_date > $today) {
+        //     $this->session->set_flashdata('error', 'Date of Birth cannot be in the future.');
+        //     redirect('Registration');
+        //     exit;
+        // }
 
         // Prepare data for insertion
         $data = [
@@ -63,8 +63,8 @@ class Registration extends CI_Controller
             'password' => password_hash($password, PASSWORD_BCRYPT),
             'address' => $address,
             'contact' => $contact,
-            'dob' => $dob,
-            'age' => $this->calculate_age($dob),
+            // 'dob' => $dob,
+            // 'age' => $this->calculate_age($dob),
         ];
 
         // Insert data into the database
@@ -72,8 +72,8 @@ class Registration extends CI_Controller
             $this->session->set_flashdata('success', 'Registration successful. You can now log in.');
             redirect('Home');
         } else {
-            $this->session->set_flashdata('error', 'An error occurred. Please try again.');
-            redirect('Registration');
+            // $this->session->set_flashdata('error', 'An error occurred. Please try again.');
+            // redirect('Registration');
         }
         exit;
     }
