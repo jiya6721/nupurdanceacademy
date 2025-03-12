@@ -14,19 +14,9 @@ class Registration extends CI_Controller
 
     public function index()
     {
-        if ($this->input->post('register')) {
-            $this->register(); // Call register function if form is submitted
-        } else {
-            $this->load->view('user_panel/Registration_view');
-        }
-      }
-
-    // private function calculate_age($dob)
-    // {
-    //     $dob = new DateTime($dob);
-    //     $today = new DateTime('today');
-    //     return $dob->diff($today)->y;
-    // }
+       
+        $this->load->view('user_panel/Registration_view');
+    }
 
     public function register()
     {
@@ -36,25 +26,25 @@ class Registration extends CI_Controller
         $password = $this->input->post('password');
         $address = $this->input->post('address');
         $contact = $this->input->post('contact');
-        // $dob = $this->input->post('dob');
+        $dob = $this->input->post('dob');
 
-        // Validate email uniqueness
-        $existing_user = $this->db->get_where('users', ['email' => $email])->row();
-        if ($existing_user) {
-            $this->session->set_flashdata('error', 'Email already registered.');
+        // Validate required fields
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
+        $this->form_validation->set_rules('dob', 'Date of Birth', 'required');
+        $this->form_validation->set_rules('contact', 'Contact', 'required|numeric|min_length[10]');
+        
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
             redirect('Registration');
-            exit;
         }
 
-        // // Validate future DOB
-        // $dob_date = new DateTime($dob);
-        // $today = new DateTime('today');
-
-        // if ($dob_date > $today) {
-        //     $this->session->set_flashdata('error', 'Date of Birth cannot be in the future.');
-        //     redirect('Registration');
-        //     exit;
-        // }
+        // Validate future DOB
+        if (strtotime($dob) > time()) {
+            $this->session->set_flashdata('error', 'Date of Birth cannot be in the future.');
+            redirect('Registration');
+        }
 
         // Prepare data for insertion
         $data = [
@@ -63,19 +53,26 @@ class Registration extends CI_Controller
             'password' => password_hash($password, PASSWORD_BCRYPT),
             'address' => $address,
             'contact' => $contact,
-            // 'dob' => $dob,
-            // 'age' => $this->calculate_age($dob),
+            'dob' => $dob,
+            'age' => $this->calculate_age($dob),
         ];
 
         // Insert data into the database
-        if ($this->db->insert('users', $data)) {
+        // if ($this->User->insert_user($data)) {
+            if ($this->User->insert_user($data)) {
+
             $this->session->set_flashdata('success', 'Registration successful. You can now log in.');
-            redirect('Home');
+            redirect('Home'); // Ensure this matches your controller's route
         } else {
-            // $this->session->set_flashdata('error', 'An error occurred. Please try again.');
-            // redirect('Registration');
+            $this->session->set_flashdata('error', 'An error occurred. Please try again.');
+            redirect('Registration');
         }
-        exit;
+    }
+
+    private function calculate_age($dob)
+    {
+        $dob = new DateTime($dob);
+        $today = new DateTime('today');
+        return $dob->diff($today)->y;
     }
 }
-?>

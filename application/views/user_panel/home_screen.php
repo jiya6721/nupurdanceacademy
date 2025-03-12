@@ -80,15 +80,19 @@ https://templatemo.com/tm-569-edu-meeting
                              <a href="<?=base_url('Registration')?>" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Register</a>
             
                         </li>
-                          <li class="has-sub">
+                          <!-- <li class="has-sub">
                               <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
                                   <li><a href="meetings.html">Upcoming Meetings</a></li>
                                   <li><a href="meeting-details.html">Meeting Details</a></li>
                               </ul>
-                          </li>
+                          </li> -->
                           <li class="scroll-to-section"><a href="#meetings">Courses</a></li> 
                           <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                          <!-- <li>
+                          <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="<?= base_url('public/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
+                          </a> </li>-->
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -199,7 +203,7 @@ https://templatemo.com/tm-569-edu-meeting
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Events</h2>
+            <h2>Events & Course</h2>
           </div>
         </div>
         <div class="col-lg-4">
@@ -249,8 +253,13 @@ https://templatemo.com/tm-569-edu-meeting
                             <h6><?= $month ?> <span><?= $day ?></span></h6>
                         </div>
                           <h4><?= $event['title'] ?></h4></a>
-                        <p><?= $event['discription'] ?></p>
-                    </div>
+                        <!-- <p><?= $event['discription'] ?></p> -->
+                        <p>
+                          <?= substr($event['discription'], 0, 100) . '...' ?> 
+                          <a href="<?= base_url('event_page/'.$event['id']) ?>">Read More</a>
+                        </p>
+
+                      </div>
                 </div>
             </div>
         <?php } ?>
@@ -467,8 +476,8 @@ https://templatemo.com/tm-569-edu-meeting
                 <span>78,Aiya Space, 370001, Gujarat</span>
               </li>
               <li>
-                <h6>Website URL</h6>
-                <span>www.meeting.edu</span>
+                <!-- <h6>Website URL</h6>
+                <span>www.meeting.edu</span> -->
               </li>
             </ul>
           </div>

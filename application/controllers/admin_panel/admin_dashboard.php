@@ -14,7 +14,7 @@ class admin_dashboard extends CI_Controller
 	
         public function index()
 	{
-		
+		$data['admin_name'] = $this->session->userdata('admin_name');
         $this->load->view('admin_panel/admin_dashboard');
 	}
     

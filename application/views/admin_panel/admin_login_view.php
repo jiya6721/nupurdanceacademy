@@ -1,134 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
-
-  <!-- General CSS Files -->
-  <link rel="stylesheet" href="public/modules/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="public/modules/fontawesome/css/all.min.css">
-
-  <!-- CSS Libraries -->
-  <link rel="stylesheet" href="public/modules/bootstrap-social/bootstrap-social.css">
-
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="public/css/style.css">
-  <link rel="stylesheet" href="public/css/components.css">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-
-
 <body>
-  <div id="app">
-    <section class="section">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-            <div class="login-brand">
-              <img src="assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
+    <div class="container">
+        <h2 class="text-center">Admin Login</h2>
+        <form method="post" action="<?php echo base_url(); ?>admin_login/login_validation">
+            <div class="form-group">
+                <label>Enter Username</label>
+                <input type="text" name="name" class="form-control" required>
             </div>
-
-            <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4></div>
-              <?php if($this->session->flashdata('register_success')): ?>
-                <script>
-                  Swal.fire({
-                    title: 'Success!',
-                    text: '<?= $this->session->flashdata('register_success'); ?>',
-                    icon: 'success'
-                  });
-                </script>
-              <?php endif; ?>
-
-              <?php if($this->session->flashdata('register_fail')): ?>
-              <script>
-                Swal.fire({
-                  title: 'Error!',
-                  text: '<?= $this->session->flashdata('register_fail'); ?>',
-                  icon: 'error'
-                });
-              </script>
-
-              <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your email
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="d-block">
-                    	<label for="password" class="control-label">Password</label>
-                      <div class="float-right">
-                        <a href="auth-forgot-password.html" class="text-small">
-                          Forgot Password?
-                        </a>
-                      </div>
-                    </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
-                    <div class="invalid-feedback">
-                      please fill in your password
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                      <label class="custom-control-label" for="remember-me">Remember Me</label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                      Login
-                    </button>
-                  </div>
-                </form>
-                <div class="text-center mt-4 mb-3">
-                  <div class="text-job text-muted">Login With Social</div>
-                </div>
-                <div class="row sm-gutters">
-                  <div class="col-6">
-                    <a class="btn btn-block btn-social btn-facebook">
-                      <span class="fab fa-facebook"></span> Facebook
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a class="btn btn-block btn-social btn-twitter">
-                      <span class="fab fa-twitter"></span> Twitter
-                    </a>                                
-                  </div>
-                </div>
-
-              </div>
+            <div class="form-group">
+                <label>Enter Password</label>
+                <input type="password" name="password" class="form-control" required>
             </div>
-            <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="admin_panel/admin_register">Create One</a>
+            <div class="form-group">
+                <input type="submit" name="login" value="Login" class="btn btn-primary">
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- General JS Scripts -->
-  <script src="public/modules/jquery.min.js"></script>
-  <script src="public/modules/popper.js"></script>
-  <script src="public/modules/tooltip.js"></script>
-  <script src="public/modules/bootstrap/js/bootstrap.min.js"></script>
-  <script src="public/modules/nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="public/modules/moment.min.js"></script>
-  <script src="public/js/stisla.js"></script>
-  <!-- <script src="view/layouts/include_js.php"></script> -->
-  <!-- JS Libraies -->
-
-  <!-- Page Specific JS File -->
-  
-  <!-- Template JS File -->
-  <script src="public/js/scripts.js"></script>
-  <script src="public/js/custom.js"></script>
+            <?php  
+                // if ($this->session->flashdata('error')) {
+                //     echo '<div class="alert alert-danger">'.$this->session->flashdata("error").'</div>';  
+                // }
+                if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $this->session->flashdata("error"); ?>
+                    </div>
+                <?php endif; ?>
+                
+        </form>
+    </div>
 </body>
 </html>

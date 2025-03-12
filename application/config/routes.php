@@ -53,19 +53,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
 $route['login'] = 'login';
 $route['Registration'] = 'user_panel/Registration';
-$route['Registration_op'] = 'user_panel/Registration/register';
-
+// $route['Registration_op'] = 'user_panel/Registration/register';
+// $route['registration'] = 'Registration/index';
+$route['Registration/register'] = 'user_panel/Registration/register';
 $route['Home'] = 'user_panel/Home';
-
 $route['sliders'] = 'user_panel/sliders';
 $route['event_page/(:num)']='user_panel/event_page/index/$1';
-// $route['course_page/(:num)']='user_panel/course_page/index/$1';
+// Route to view the course page by ID
 $route['course_page/(:num)'] = 'user_panel/course_page/index/$1';
 
+// Route for validating user access via form submission
+$route['course_page/validate_access'] = 'user_panel/course_page/validate_access';
 
-$route['admin_login'] = 'admin_panel/admin_login';
+// Route to serve protected files via PHP script
+// $route['download.php'] = 'user_panel/course_page/download_protected_file';
+$route['course_page/download/(:any)'] = 'user_panel/course_page/download_protected_file/$1';
+
+
+
+$route['admin_login'] = 'admin_panel/admin_login/login';
+$route['admin_login/login_validation'] = 'admin_panel/admin_login/login_validation';
+$route['admin_login/dashboard'] = 'admin_panel/admin_login/dashboard';
+$route['admin_login/logout'] = 'admin_panel/admin_login/logout';
+
 $route['admin_register'] = 'admin_panel/admin_register';
 $route['admin_register_add'] = 'admin_panel/admin_register/register';
 

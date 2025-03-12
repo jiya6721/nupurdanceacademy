@@ -1,9 +1,7 @@
 <?php
 class Event_image extends CI_Model{
 
-
-
-    public function get_events()
+    public function get_subscriber()
     {
 
         $query = $this->db->get("subscribers");
@@ -11,6 +9,21 @@ class Event_image extends CI_Model{
         return $query->result();
 
     }
+
+    public function validate_user($user_id, $password, $course_id)
+    {
+        $this->db->where('id', $user_id);
+        $this->db->where('password', md5($password)); // Password stored as MD5 hash
+        $this->db->where('course_id', $course_id);
+        $query = $this->db->get('subscribers');
+    
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        }
+        return false;
+    }
+    
+
     public function funcname($id)
     {
         $this->db->select('*');
@@ -30,3 +43,4 @@ class Event_image extends CI_Model{
             return false;
         }
     }
+}

@@ -8,7 +8,7 @@
         <section class="section">
           <div class="section-header">
             <h1>Dashboard</h1>
-
+          
             
           </div>
           <div class="row">
@@ -22,7 +22,7 @@
                     <h4>Total Admin</h4>
                   </div>
                   <div class="card-body">
-                    10
+                    1
                   </div>
                 </div>
               </div>
@@ -34,10 +34,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>News</h4>
+                    <h4>Awards</h4>
                   </div>
                   <div class="card-body">
-                    42
+                    500+
                   </div>
                 </div>
               </div>
@@ -49,10 +49,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Reports</h4>
+                    <h4>Students</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                    300+
                   </div>
                 </div>
               </div>
@@ -79,3 +79,10 @@
           
         </section>
       </div>
+      <body>
+    <div class="container">
+        <h2>Welcome, <?php echo $this->session->userdata('username'); ?>!</h2>
+        <a href="<?php echo base_url(); ?>admin_login/logout" class="btn btn-danger">Logout</a>
+    </div>
+</body>
+</html>

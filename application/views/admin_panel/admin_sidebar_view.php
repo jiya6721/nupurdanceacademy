@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>General Dashboard &mdash; Stisla</title>
-  <?php $this->load->view('layouts/include_css'); ?>
+  <title>General Dashboard &mdash; </title>
 
-  
+  <!-- Bootstrap CSS (Keep inside <head>) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <?php $this->load->view('layouts/include_css'); ?>
 </head>
 
 <body>
@@ -18,22 +20,23 @@
       <nav class="navbar navbar-expand-lg main-navbar">
         
         <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle">
-            <a href="admin_panel/admin_login" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle ">Login</a>
-            
+          <li class="nav-item">
+            <a href="<?= base_url('admin_panel/admin_login'); ?>" class="nav-link nav-link-lg">Login</a>
           </li>
-          <li class="dropdown dropdown-list-toggle">
-            <a href="admin_panel/admin_register" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Register</a>
-            
+          <li class="nav-item">
+            <a href="<?= base_url('admin_panel/admin_register'); ?>" class="nav-link nav-link-lg">Register</a>
           </li>
-
-
+          
+          
           <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="public/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+              <img alt="image" src="<?= base_url('public/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
+              <div class="d-sm-none d-lg-inline-block">
+                <?= ($this->session->userdata('admin_name')) ? $this->session->userdata('admin_name') : 'Admin'; ?>
+              </div>
+            </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <div class="dropdown-title">Logged in</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
@@ -51,6 +54,7 @@
           </li>
         </ul>
       </nav>
+      
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
@@ -62,18 +66,34 @@
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li><a class="nav-link" href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
-
             <li class="menu-header">Starter</li>
-            
-            <li><a class="nav-link" href="<?=base_url('admin_sliders');?>"><i class="fas fa-grip-horizontal"></i> <span>Sliders</span></a></li>
-            <li><a class="nav-link" href="<?=base_url('admin_gallary');?>"><i class="far fa-file-image"></i> <span>Gallary</span></a></li>
-            <li><a class="nav-link" href="<?=base_url('admin_course');?>"><i class="fas fa-book"></i> <span>Course</span></a></li>
-            <li><a class="nav-link" href="<?=base_url('admin_alumni');?>"><i class="fas fa-address-card"></i> <span>Alumni</span></a></li>
-            <li><a class="nav-link" href="<?=base_url('admin_events');?>"><i class="fa fa-calendar"></i> <span>Events</span></a></li>
-          </div>       
-         </aside>
+            <li><a class="nav-link" href="<?= base_url('admin_sliders'); ?>"><i class="fas fa-grip-horizontal"></i> <span>Sliders</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin_gallary'); ?>"><i class="far fa-file-image"></i> <span>Gallery</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin_course'); ?>"><i class="fas fa-book"></i> <span>Course</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin_alumni'); ?>"><i class="fas fa-address-card"></i> <span>Alumni</span></a></li>
+            <li><a class="nav-link" href="<?= base_url('admin_events'); ?>"><i class="fa fa-calendar"></i> <span>Events</span></a></li>
+          </ul>       
+        </aside>
       </div>
     </div>
   </div>
+
+  <!-- jQuery and Bootstrap JS (Ensure correct order) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      let $dropdownMenu = $(".dropdown-menu");
+      let $items = $dropdownMenu.find(".dropdown-item:not(.text-danger)").detach();
+
+      $items.sort(function (a, b) {
+        return $(a).text().trim().localeCompare($(b).text().trim());
+      });
+
+      let $divider = $dropdownMenu.find(".dropdown-divider");
+      $items.insertBefore($divider);
+    });
+  </script>
 </body>
 </html>

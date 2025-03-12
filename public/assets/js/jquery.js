@@ -10362,3 +10362,16 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
+
+
+$(document).ready(function () {
+    let $dropdownMenu = $(".dropdown-menu");
+    let $items = $dropdownMenu.find(".dropdown-item:not(.text-danger)").detach();
+
+    $items.sort(function (a, b) {
+        return $(a).text().trim().localeCompare($(b).text().trim());
+    });
+
+    let $divider = $dropdownMenu.find(".dropdown-divider");
+    $items.insertBefore($divider);
+});

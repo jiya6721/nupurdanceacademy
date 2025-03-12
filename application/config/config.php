@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['base_url'] = 'http://localhost/codeigniter/';  // Your base URL
 $config['index_page'] = 'index.php';  // Leave empty to remove 'index.php' from URLs
 $config['uri_protocol'] = 'REQUEST_URI';  // This should be fine for most setups
-
+$config['encryption_key'] = 'xRUqKhsoZ5qV6y3kqARFJFdPqJvp7X2z';  // For encrypt session data by using encryption class  
 // $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/codeigniter';
 
 

@@ -46,50 +46,67 @@
   <script src="public/js/custom.js"></script>
 </head>
 
-
-<div class="container">
-  <h2>Registartion Form</h2>
-
-  <?php echo @$message; ?>
-
   
   <body>
+<div class="container">
+  <h2>Registration Form</h2>
 
-  <form method="post"  enctype="multipart/formdata" action="<?php echo site_url('Registration');?>">  
-    <fieldset>
-  <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" name="name" placeholder="Enter Name">
-      <div class="error"> <?php echo form_error('name');?></div>
-    </div>
+  <?php if ($this->session->flashdata('error')): ?>
+      <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+  <?php endif; ?>
+  <?php if ($this->session->flashdata('success')): ?>
+      <div class="alert alert-success"><?= $this->session->flashdata('success'); ?></div>
+  <?php endif; ?>
+
+  <form method="post" action="<?= site_url('Registration/register'); ?>">
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" name="email" placeholder="Enter Email ID">
+      <label>Name:</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter Name" required>
     </div>
 
-	<div class="form-group">
-      <label for="contact">Phone Number:</label>
-      <input type="contact" class="form-control" name="contact" placeholder="Enter Phone Number">
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter Email ID" required>
     </div>
 
-	<div class="form-group">
-      <label for="passsword">Password:</label>
-      <input type="text" class="form-control" name="password" placeholder="Enter Password">
+    <div class="form-group">
+      <label>Phone Number:</label>
+      <input type="text" class="form-control" name="contact" placeholder="Enter Phone Number" required>
     </div>
 
-  <!-- <div class="form-group">
-    <label for="dob">Enter your Date of Birth:</label>
-    <input type="date" id="dob" name="dob"  />
-  </div> -->
-
-  <div class="form-group">
-      <label for="contact">Address :</label>
-      <input type="text" class="form-control" name="address" placeholder="Enter address">
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
     </div>
 
-    <input type="submit" name="register" class="btn btn-success" value="Register" src="home_screen"/>
+    <div class="form-group">
+      <label>Date of Birth:</label>
+      <input type="date" class="form-control" name="dob" required>
+    </div>
+
+    <div class="form-group">
+      <label>Address:</label>
+      <input type="text" class="form-control" name="address" placeholder="Enter Address" required>
+    </div>
+
+    <input type="submit" name="register" class="btn btn-success" value="Register">
   </form>
 </div>
-</fieldset>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        let dobInput = document.querySelector('input[name="dob"]');
+        let dob = new Date(dobInput.value);
+        let today = new Date();
+
+        if (dob > today) {
+            alert("Birth date cannot be in the future.");
+            dobInput.value = ""; // Clear the input field
+            event.preventDefault(); // Stop form submission
+        }
+    });
+});
+</script>
 </body>
 </html>

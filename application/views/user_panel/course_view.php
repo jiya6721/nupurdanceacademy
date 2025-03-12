@@ -84,9 +84,8 @@
     </script>
 </head>
 <body>
-    <div class="container mt-5">
     <h1>Bharatanatyam Course Files</h1>
-    </div>
+    
     <?php if (!empty($course->file)): ?>
         <div>
             <h2><?= htmlspecialchars($course->name) ?></h2>
@@ -105,8 +104,5 @@
     <?php else: ?>
         <p>No file found.</p>
     <?php endif; ?>
-
-    <?php $this->load->view('user_panel/footer');?>
-
 </body>
 </html>
