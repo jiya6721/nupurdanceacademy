@@ -54,7 +54,11 @@ $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['login'] = 'login';
+$route['login1'] = 'user_panel/login';
+$route['login1/login_validation'] = 'admin_panel/login1/login_validation';
+$route['login1/dashboard'] = 'admin_panel/login1/dashboard';
+$route['login1/logout'] = 'admin_panel/login1/logout';
+
 $route['Registration'] = 'user_panel/Registration';
 // $route['Registration_op'] = 'user_panel/Registration/register';
 // $route['registration'] = 'Registration/index';
@@ -71,8 +75,6 @@ $route['course_page/validate_access'] = 'user_panel/course_page/validate_access'
 // Route to serve protected files via PHP script
 // $route['download.php'] = 'user_panel/course_page/download_protected_file';
 $route['course_page/download/(:any)'] = 'user_panel/course_page/download_protected_file/$1';
-
-
 
 $route['admin_login'] = 'admin_panel/admin_login/login';
 $route['admin_login/login_validation'] = 'admin_panel/admin_login/login_validation';

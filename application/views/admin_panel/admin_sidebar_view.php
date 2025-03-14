@@ -20,38 +20,64 @@
       <nav class="navbar navbar-expand-lg main-navbar">
         
         <ul class="navbar-nav navbar-right">
-          <li class="nav-item">
-            <a href="<?= base_url('admin_panel/admin_login'); ?>" class="nav-link nav-link-lg">Login</a>
-          </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
+            <a href="<?= base_url('admin_login'); ?>" class="nav-link nav-link-lg">Login</a>
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="<?= base_url('admin_panel/admin_register'); ?>" class="nav-link nav-link-lg">Register</a>
-          </li>
+          </li> -->
           
           
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="<?= base_url('public/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
               <div class="d-sm-none d-lg-inline-block">
-                <?= ($this->session->userdata('admin_name')) ? $this->session->userdata('admin_name') : 'Admin'; ?>
+               <?= ($this->session->userdata('admin_name')) ? $this->session->userdata('admin_name') : 'Admin'; ?>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
-              </a>
-              <a href="features-activities.html" class="dropdown-item has-icon">
-                <i class="fas fa-bolt"></i> Activities
-              </a>
-              <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Settings
-              </a>
+              <a href="features-profile.html" class="dropdown-item has-icon"> -->
+                <!-- <i class="far fa-user"></i> Profile -->
+              <!-- </a>
+              <a href="features-activities.html" class="dropdown-item has-icon"> -->
+                <!-- <i class="fas fa-bolt"></i> Activities -->
+              <!-- </a>
+              <a href="features-settings.html" class="dropdown-item has-icon"> -->
+                <!-- <i class="fas fa-cog"></i> Settings -->
+              <!-- </a>
               <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
-          </li>
+          </li> -->
+          <!-- <ul class="navbar-nav navbar-right"> -->
+    <?php if ($this->session->userdata('admin_id')): ?>
+        <li class="nav-item dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="<?= base_url('public/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
+                <div class="d-sm-none d-lg-inline-block">
+                    <?= $this->session->userdata('admin_name'); ?>
+                </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-title">Logged in</div>
+                <a href="<?= base_url('admin_login/logout'); ?>" class="dropdown-item has-icon text-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </li>
+    <?php else: ?>
+        <li class="nav-item">
+            <a href="<?= base_url('admin_login'); ?>" class="nav-link nav-link-lg">Login</a>
+        </li>
+        <li class="nav-item">
+            <a href="<?= base_url('admin_panel/admin_register'); ?>" class="nav-link nav-link-lg">Register</a>
+        </li>
+    <?php endif; ?>
+
+
         </ul>
       </nav>
       
@@ -70,7 +96,7 @@
             <li><a class="nav-link" href="<?= base_url('admin_sliders'); ?>"><i class="fas fa-grip-horizontal"></i> <span>Sliders</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin_gallary'); ?>"><i class="far fa-file-image"></i> <span>Gallery</span></a></li>
             <li><a class="nav-link" href="<?= base_url('admin_course'); ?>"><i class="fas fa-book"></i> <span>Course</span></a></li>
-            <li><a class="nav-link" href="<?= base_url('admin_alumni'); ?>"><i class="fas fa-address-card"></i> <span>Alumni</span></a></li>
+            <!-- <li><a class="nav-link" href="<?= base_url('admin_alumni'); ?>"><i class="fas fa-address-card"></i> <span>Alumni</span></a></li> -->
             <li><a class="nav-link" href="<?= base_url('admin_events'); ?>"><i class="fa fa-calendar"></i> <span>Events</span></a></li>
           </ul>       
         </aside>

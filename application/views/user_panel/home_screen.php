@@ -76,10 +76,10 @@ https://templatemo.com/tm-569-edu-meeting
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                           <li><a href="meetings.html">Events</a></li>
-                        <li class="dropdown dropdown-list-toggle">
-                             <a href="<?=base_url('Registration')?>" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Register</a>
-            
-                        </li>
+                          <li class="scroll-to-section"><a href="#meetings">Courses</a></li> 
+                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                          <!-- <li><a href="<?=base_url('Registration')?>" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Register</a></li>
+                          <li><a href="<?=base_url('login')?>" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle">Login</a></li> -->
                           <!-- <li class="has-sub">
                               <a href="javascript:void(0)">Pages</a>
                               <ul class="sub-menu">
@@ -87,12 +87,36 @@ https://templatemo.com/tm-569-edu-meeting
                                   <li><a href="meeting-details.html">Meeting Details</a></li>
                               </ul>
                           </li> -->
-                          <li class="scroll-to-section"><a href="#meetings">Courses</a></li> 
-                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                            <?php if ($this->session->userdata('admin_id')): ?>
+                              <li class="nav-item dropdown">
+                                  <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                      <img alt="image" src="<?= base_url('public/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
+                                      <div class="d-sm-none d-lg-inline-block">
+                                          <?= $this->session->userdata('admin_name'); ?>
+                                      </div>
+                                  </a>
+                          
+                          <!-- <div class="dropdown-menu dropdown-menu-right"> -->
+                          <div class="dropdown-title">Logged in</div>
+                          <a href="<?= base_url('admin_login/logout'); ?>" class="dropdown-item has-icon text-danger">
+                              <i class="fas fa-sign-out-alt"></i> Logout
+                          </a>
+                      </div>
+                          </li>
+                               <?php else: ?>
+                          <li class="nav-item">
+                              <a href="<?= base_url('admin_login'); ?>" class="nav-link nav-link-lg">Login</a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="<?= base_url('admin_panel/admin_register'); ?>" class="nav-link nav-link-lg">Register</a>
+                          </li>
+                      <?php endif; ?>
+
+
                           <!-- <li>
                           <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="<?= base_url('public/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
-                          </a> </li>-->
+                          </a> </li> -->
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>

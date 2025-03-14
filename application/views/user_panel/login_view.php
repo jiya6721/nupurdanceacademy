@@ -1,126 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title> Login Form</title>
-    <style>
-    
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: sans-serif;
-    line-height: 1.5;
-    min-height: 100vh;
-    background: #f3f3f3;
-    flex-direction: column;
-    margin: 0;
-}
-
-.login {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    transition: transform 0.2s;
-    width: 500px;
-    text-align: center;
-}
-
-h1 {
-    color:rgb(204, 138, 176);
-}
-
-label {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: left;
-    color: #555;
-    font-weight: bold;
-}
-
-input {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color:rgb(204, 138, 176);
-    width: 100%;
-    font-size: 16px;
-}
-
-.wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-      </style>
+    <title>User Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-
 <body>
-    <div class="login">
-        
-        <h1>Enter your login credentials</h1>
-        <?php if($this->session->flashdata('register_success')): ?>
-<script>
-  Swal.fire({
-    title: 'Success!',
-    text: '<?= $this->session->flashdata('register_success'); ?>',
-    icon: 'success'
-  });
-</script>
-<?php endif; ?>
-
-<?php if($this->session->flashdata('register_fail')): ?>
-<script>
-  Swal.fire({
-    title: 'Error!',
-    text: '<?= $this->session->flashdata('register_fail'); ?>',
-    icon: 'error'
-  });
-</script>
-
-        <form action="">
-            <label for="first">
-                Username:
-            </label>
-            <input type="text" id="first" name="first" 
-                placeholder="Enter your Username" required>
-
-            <label for="password">
-                Password:
-            </label>
-            <input type="password" id="password" name="password" 
-                placeholder="Enter your Password" required>
-
-            <div class="wrap">
-                <button type="submit">
-                    Submit
-                </button>
+    <div class="container">
+        <h2 class="text-center">User Login</h2>
+        <form method="post" action="<?=base_url('login1/login_validation'); ?>">
+            <div class="form-group">
+                <label>Enter Email</label>
+                <input id="email" type="email" class="form-control" name="email" required>
+                    <!-- <div class="invalid-feedback"> -->
+                <!-- <input type="text" name="name" class="form-control" required> -->
             </div>
+            <div class="form-group">
+                <label>Enter Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="login" value="Login" class="btn btn-primary">
+               
+            </div>
+            <?php  
+                if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $this->session->flashdata("error"); ?>
+                    </div>
+                <?php endif; ?>
+                
         </form>
-        
-        <p>Not registered?
-            <a href="registration_form" style="text-decoration: none;">
-                Create an account
-            </a>
-        </p>
     </div>
 </body>
-
 </html>
